@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | 我的博客</title>
+  <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）   JMM三大特性  只有以下三个特性同时满足，才是线程安全的代码 原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Loc">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/# JVM/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）   JMM三大特性  只有以下三个特性同时满足，才是线程安全的代码 原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Loc">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-13T03:55:53.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客">
+<meta name="twitter:description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）   JMM三大特性  只有以下三个特性同时满足，才是线程安全的代码 原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Loc">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -150,169 +154,382 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-# JVM" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><p>JVM：java内存模型（关于并发程序的内存模型-逻辑模型）</p>
+<ol>
+<li><p>JMM的工作流程</p>
+<ul>
+<li>工作内存：每个线程创建时分配的空间，线程私有。</li>
+<li>主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）</li>
+</ul>
+</li>
+<li><p>JMM三大特性</p>
+<ul>
+<li>只有以下三个特性同时满足，才是线程安全的代码<ul>
+<li>原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Lock来保证。<ul>
+<li>原子性是指一个操作是不可中断的。即使是在多个线程一起执行的时候，一个操作一旦开始就不会被其他线程干扰。 </li>
+</ul>
+</li>
+<li>可见性：任意一个线程修改了共享变量的值，其他线程能够立即得知此修改，只有以下三种synchronized，volatile、final实现可见性</li>
+<li>有序性：逻辑上写在前面的代码优先发生于写在后面的代码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>volatile变量的特殊规则</p>
+<p>3.1可见性</p>
+<p>volatile写操作优先发生于读操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">禁止指令重排</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">1</span>；</span><br><span class="line">    <span class="keyword">int</span> y=<span class="number">2</span>；</span><br><span class="line">--------<span class="keyword">volatile</span> <span class="keyword">int</span> z=<span class="number">3</span>；-------</span><br><span class="line">    x+=<span class="number">2</span>；</span><br><span class="line">    y+=<span class="number">2</span>；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>a.volatile代码既不会提前也不会滞后；</li>
+<li>a.volatile代码</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>深浅拷贝：对象</p>
+<ul>
+<li><p>浅拷贝：牵一发而动全身。</p>
+</li>
+<li><p>拷贝对象的引用复用，并不会产生新对象</p>
+</li>
+<li><p>深拷贝：拷贝对象的内部的引用也会产生新对象。</p>
+<ul>
+<li>实现深拷贝：</li>
+</ul>
+<ol>
+<li>递归使用Cloneable接口</li>
+<li>使用序列化（推荐）</li>
+</ol>
+</li>
+</ul>
+<h2 id="JVM-1"><a href="#JVM-1" class="headerlink" title="JVM"></a>JVM</h2><ol>
+<li><h3 id="内存区域划分"><a href="#内存区域划分" class="headerlink" title="内存区域划分"></a>内存区域划分</h3></li>
+</ol>
+<ul>
+<li><p>线程私有（随着线程的创建而创建，随着线程销毁而回收，生命周期与线程相同，不同线程间隔离）</p>
+<ul>
+<li>程序计数器：记录当前所执行的字节码行号，唯一 一块不产生OOM。native方法在程序计数器中值为0.</li>
+<li>虚拟机栈：java方法的内存模型。–Xss设置栈的大小  StackOverflowError    OOM</li>
+<li>本地方法栈：本地方法的内存模型<ul>
+<li>HotSpot：本地得到栈与虚拟机栈合二为一</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>线程共享</p>
+<ul>
+<li>堆（GC堆）：所有对象以及数组实例   -Xms设置堆的最小值  -Xms设置堆的最大值</li>
+<li>方法区（JDK8之前的永久代）：静态变量，常量，加载的类信息</li>
+<li>运行时的常量池（方法区的一部分）：方法引用，字面量。</li>
+</ul>
+</li>
+<li><p>判断对象是否存活–&gt;对象是否原地去世？（finalize（））去世》如何回收不在存活对象（GC算法）</p>
+</li>
+</ul>
+<ol start="2">
+<li><p>判断对象是否存活：</p>
+<ol>
+<li>引用计数器（c++只能指针，pythonGC）<ul>
+<li>无法解决循环引用问题（java没有采用）</li>
+</ul>
+</li>
+<li>可达性分析算法<ul>
+<li>GC Roots；</li>
+<li>a.类中的静态变量，常量</li>
+<li>b.栈中的局部变量</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>JDK1.2之后关于引用的扩充</p>
+<ul>
+<li>强：程序中普遍存在的，类似Test test=new Test（）；只要对象被强引用指向，GC无法回收此对象</li>
+<li>软：描述有用，但不必须对象（缓存对象），JDK1.2 SoftRerference来描述软引用。<ul>
+<li>当对象仅被软引用指向，内存够用时不回收，即将发生OOM，一次回收掉仅被软引用指向的对象。</li>
+</ul>
+</li>
+<li>弱：仅能存活在下一次GC之前，GC开始前，无论内存是否够用，都会回收掉仅被弱引用指向的对象<ul>
+<li>JDK1.2 WeakRerference来描述弱引用</li>
+</ul>
+</li>
+<li>虚：与对象的生命周期无关，当对象被GC时，由JVM发出一个回收通知。JDK12PhatomRenference描述虚引用</li>
+</ul>
+</li>
+<li><p>对象的自我拯救finalize()</p>
+<ul>
+<li>final,finally,finalize区别</li>
+</ul>
+</li>
+<li><p>如何进行垃圾回收</p>
+<p>答：java采用分代回收算法，将内存分为新生代与老年代，其中新生代采用复制算法，老年代采用标记–整理算法</p>
+<ul>
+<li>新生代（对象默认在新生代产生，对象存活率较低）：复制算法：（一块较大的Eden，survivor）</li>
+<li>老年代（对象存活率较高）：标记整理算法</li>
+</ul>
+</li>
+</ol>
+<p>面试题：请解释MinorGC与FullGC（Major GC）</p>
+<h2 id="类集"><a href="#类集" class="headerlink" title="类集"></a>类集</h2><ol>
+<li><h3 id="ArrayList、LinkList、vector的关系与区别（源码）？"><a href="#ArrayList、LinkList、vector的关系与区别（源码）？" class="headerlink" title="ArrayList、LinkList、vector的关系与区别（源码）？"></a>ArrayList、LinkList、vector的关系与区别（源码）？</h3><p>答：1. ArrayList基于数组实现List，采用懒加载策略，当第一次调用add方法时，数组才会初始化为10（默认值）ArrayList扩容为原先数组的1.5倍，ArrayList采用异步操作，线程不安全，性能较高。（在普通插入使用ArrayList比较快，因为它直接插在尾部，看源码add）</p>
+<p>​        2.Vector（JDK1.0）基于数组实现List，当产生vector对象时，就初始化为大小为10的数组，扩容为原来数组的二倍。Vector采用同步方法保证线程安全，性能低（读读互斥）</p>
+<p>​         3.LinkList基于双向链表实现的List，采用异步处理，线程不安全。（在任意位置插入或删除时考虑使用LinkList或需要使用队列的场合）</p>
+</li>
+<li><h4 id="请描述fail-fast（快速失败）策略-ConcurrentModificationExcrption"><a href="#请描述fail-fast（快速失败）策略-ConcurrentModificationExcrption" class="headerlink" title="请描述fail-fast（快速失败）策略?  ConcurrentModificationExcrption."></a>请描述fail-fast（快速失败）策略?  ConcurrentModificationExcrption.</h4><ul>
+<li><p>在迭代输出的过程中修改了集合的结构，（remove，add）抛出此异常，为了保证多线程场景下取得数据正确性。</p>
+</li>
+<li><p>如何产生：modCount记录当前被修改次数</p>
+</li>
+<li><p>expectedModCount迭代器内部记录当前集合修改次数，取得集合迭代器是赋值为modCount</p>
+</li>
+<li><p>modCount ！=expectedModCount</p>
+</li>
+<li><p>如何解决</p>
+<ul>
+<li>迭代输出时尽量不要修改集合结构</li>
+<li>使用juc包下的线程安全集合去CopyOnWriteArrayList，concurrentHashMap(fail-fast集合)</li>
+</ul>
+</li>
+<li><p>答：定义：优先考虑异常情况，直接抛出，程序终止。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="set与Map有什么关系？"><a href="#set与Map有什么关系？" class="headerlink" title="set与Map有什么关系？"></a>set与Map有什么关系？</h3></li>
+</ol>
+<p>​      答：set实际就是Map,Set将元素储存到来Map的key，共享一个空的Object的value。</p>
+<ul>
+<li><h4 id="3-1hashcode与equals的区别"><a href="#3-1hashcode与equals的区别" class="headerlink" title="3.1hashcode与equals的区别"></a>3.1hashcode与equals的区别</h4><ul>
+<li>hashcode：将任意一个对象按照特点的哈希算法变为整数（对象中所有属性均参与运算）</li>
+<li>equals：比较两个对象是否相等。（属性值）</li>
+<li>equals相等时Hashcode一定相等。</li>
+<li>hashcode相等时，equals不一定相等。（参考哈希表的设计）</li>
+</ul>
+</li>
+<li><h4 id="3-2如何实现第三方类的比较（内部排序，外部排序）"><a href="#3-2如何实现第三方类的比较（内部排序，外部排序）" class="headerlink" title="3.2如何实现第三方类的比较（内部排序，外部排序）"></a>3.2如何实现第三方类的比较（内部排序，外部排序）</h4><ul>
+<li><p>内部排序：Comparable</p>
+<ul>
+<li><p>当一个数实现了Comepable接口，表示该类具备天然可比较特性</p>
+<p>-int  Comparable（Object antherObj）</p>
+</li>
+</ul>
+</li>
+<li><p>外部排序：Comparator</p>
+<ul>
+<li><p>类本身不具备比较的特性，但专门有一个类实现了Comepator（福布斯排行榜，年龄排行榜，全球影响力排行榜之类）来比较该类的大小（比较器）</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> compare（Object obj1，Object obj2）；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>要想将自定义的类存储到TreeSet（TreeMap）中，要么元素本身可比较（实现了Comeparable接口）要么通过构造方法传入该类的比较器（实行Comparator接口）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><h3 id="HashMap、Hashtable、TreeMap的关系与区别？"><a href="#HashMap、Hashtable、TreeMap的关系与区别？" class="headerlink" title="HashMap、Hashtable、TreeMap的关系与区别？"></a>HashMap、Hashtable、TreeMap的关系与区别？</h3></li>
+</ol>
+<ul>
+<li><p>HashMap：哈希表+红黑树（JDK1.8之前哈希表）组成</p>
+</li>
+<li><p>HashTable：哈希表</p>
+</li>
+<li><p>TreeMap：红黑树</p>
+</li>
+<li><p>线程安全性：只有HashTable线程安全（使用synchronized同步方法，读读互斥）。</p>
+</li>
+<li><p>HashM内部实现原理（看源码）</p>
+<ul>
+<li><p>元素到底在哪个数组下标位置存储：内部哈希算法（采用懒加载策略）</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> V <span class="title">putVal</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">boolean</span> onlyIfAbsent,</span></span></span><br><span class="line"><span class="function"><span class="params">               <span class="keyword">boolean</span> evict)</span> </span>&#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="keyword">int</span> n, i;</span><br><span class="line">    <span class="comment">//哈希表初始化流程</span></span><br><span class="line">    <span class="keyword">if</span> ((tab = table) == <span class="keyword">null</span> || (n = tab.length) == <span class="number">0</span>)</span><br><span class="line">        n = (tab = resize()).length;</span><br><span class="line">    <span class="comment">//将当前哈希表对应的索引下标没有存储元素</span></span><br><span class="line">    <span class="comment">//1=（n-1）&amp; hash -&gt;确保元素的运算结果在数组的长度范围内</span></span><br><span class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="keyword">null</span>)</span><br><span class="line">        <span class="comment">//将当前要存储的元素直接放置在哈希表的数组元素下标</span></span><br><span class="line">        tab[i] = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        Node&lt;K,V&gt; e; K k;</span><br><span class="line">        <span class="comment">//要插入的元素与数组元素的key值完全相等，将value值替换插入的值</span></span><br><span class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">            ((k = p.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            e = p;</span><br><span class="line">        <span class="comment">//此时要插入的元素与数组的元素key值不等</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="keyword">this</span>, tab, hash, key, value);</span><br><span class="line">        <span class="comment">//按照链表形式插入</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//binCount是当前链表的个数</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> binCount = <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    p.next = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st</span></span><br><span class="line">                        treeifyBin(tab, hash);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                p = e;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="keyword">null</span>)</span><br><span class="line">                e.value = value;</span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ++modCount;</span><br><span class="line">    <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">        resize();</span><br><span class="line">    afterNodeInsertion(evict);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>整数之间的区别在于高16位</p>
+</li>
+<li><p>异或运算将高16位与低16位都参与异或运算，减少哈希冲突。</p>
+</li>
+</ul>
+<ul>
+<li><p>关于null</p>
+<ul>
+<li>HashTable     key与value均不能为null，HashMap，  key与value均可以为null   ，TreeMap     key与value可以为null也可以不为null。</li>
+</ul>
+</li>
+<li><h5 id="树化逻辑："><a href="#树化逻辑：" class="headerlink" title="树化逻辑："></a>树化逻辑：</h5><ul>
+<li>1.链表个数达到数的阈值（7），并且tab.length&gt;=64</li>
+</ul>
+</li>
+<li><h5 id="JDK1-8为什么要将链表树化。"><a href="#JDK1-8为什么要将链表树化。" class="headerlink" title="JDK1.8为什么要将链表树化。"></a>JDK1.8为什么要将链表树化。</h5><ul>
+<li>当链表过长，会导致查找性能急剧降低（O（n）），因此将其树化可以大大提高查找速度（o（Logn））。</li>
+</ul>
+</li>
+<li><h5 id="扩容：当前数组元素个数-gt-容量-负载因子"><a href="#扩容：当前数组元素个数-gt-容量-负载因子" class="headerlink" title="扩容：当前数组元素个数&gt;容量*负载因子"></a>扩容：当前数组元素个数&gt;容量*负载因子</h5><ul>
+<li>容量：默认16</li>
+<li>负载因子：默认0.75</li>
+</ul>
+</li>
+<li><h5 id="为何容量必须为2-n"><a href="#为何容量必须为2-n" class="headerlink" title="为何容量必须为2*n"></a>为何容量必须为2*n</h5><ul>
+<li>减少哈希冲突，让哈希数组每个索引都会被访问到。</li>
+<li>i=（n-1）&amp; hash</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？"><a href="#5-为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？" class="headerlink" title="5.为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？"></a>5.为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？</h4><p>* </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/# JVM/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:50:23.102Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/06/# JVM/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/表单标签/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:47:36.276Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/注解如同标签/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:44:26.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/06/表单标签/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/SE总结/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:29:25.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/JDBC的使用/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-number">1.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-1"><span class="toc-number">1.1.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存区域划分"><span class="toc-number">1.1.1.</span> <span class="toc-text">内存区域划分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类集"><span class="toc-number">1.2.</span> <span class="toc-text">类集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList、LinkList、vector的关系与区别（源码）？"><span class="toc-number">1.2.1.</span> <span class="toc-text">ArrayList、LinkList、vector的关系与区别（源码）？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请描述fail-fast（快速失败）策略-ConcurrentModificationExcrption"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">请描述fail-fast（快速失败）策略?  ConcurrentModificationExcrption.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set与Map有什么关系？"><span class="toc-number">1.2.2.</span> <span class="toc-text">set与Map有什么关系？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1hashcode与equals的区别"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">3.1hashcode与equals的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2如何实现第三方类的比较（内部排序，外部排序）"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">3.2如何实现第三方类的比较（内部排序，外部排序）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap、Hashtable、TreeMap的关系与区别？"><span class="toc-number">1.2.3.</span> <span class="toc-text">HashMap、Hashtable、TreeMap的关系与区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#树化逻辑："><span class="toc-number">1.2.3.0.1.</span> <span class="toc-text">树化逻辑：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JDK1-8为什么要将链表树化。"><span class="toc-number">1.2.3.0.2.</span> <span class="toc-text">JDK1.8为什么要将链表树化。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#扩容：当前数组元素个数-gt-容量-负载因子"><span class="toc-number">1.2.3.0.3.</span> <span class="toc-text">扩容：当前数组元素个数&gt;容量*负载因子</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为何容量必须为2-n"><span class="toc-number">1.2.3.0.4.</span> <span class="toc-text">为何容量必须为2*n</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">5.为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/Linux：常用命令：/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/网络/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -335,8 +552,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | 我的博客</title>
+  <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="多线程（一） 进程与线程   进程是OS中资源分配的最小单元 进程是OS中任务分配的最小单元 创建于销毁一个线程的开销要比一个进程小的多，线程间通信也比进程间容易的多 线程间通信：join（）。wait/notify。yield。sleep   多线程常用操作方法   sleep：运行—&amp;gt;阻塞，当前线程立即交出CPU，进入阻塞态，不会释放对象锁 yield：运行—&amp;gt;就绪，当系统调度交">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/SE总结/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="多线程（一） 进程与线程   进程是OS中资源分配的最小单元 进程是OS中任务分配的最小单元 创建于销毁一个线程的开销要比一个进程小的多，线程间通信也比进程间容易的多 线程间通信：join（）。wait/notify。yield。sleep   多线程常用操作方法   sleep：运行—&amp;gt;阻塞，当前线程立即交出CPU，进入阻塞态，不会释放对象锁 yield：运行—&amp;gt;就绪，当系统调度交">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-06T09:29:00.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客">
+<meta name="twitter:description" content="多线程（一） 进程与线程   进程是OS中资源分配的最小单元 进程是OS中任务分配的最小单元 创建于销毁一个线程的开销要比一个进程小的多，线程间通信也比进程间容易的多 线程间通信：join（）。wait/notify。yield。sleep   多线程常用操作方法   sleep：运行—&amp;gt;阻塞，当前线程立即交出CPU，进入阻塞态，不会释放对象锁 yield：运行—&amp;gt;就绪，当系统调度交">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -150,169 +154,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SE总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="多线程（一）"><a href="#多线程（一）" class="headerlink" title="多线程（一）"></a>多线程（一）</h2><ol>
+<li>进程与线程</li>
+</ol>
+<ul>
+<li>进程是OS中资源分配的最小单元</li>
+<li>进程是OS中任务分配的最小单元</li>
+<li>创建于销毁一个线程的开销要比一个进程小的多，线程间通信也比进程间容易的多</li>
+<li>线程间通信：join（）。wait/notify。yield。sleep</li>
+</ul>
+<ol start="2">
+<li>多线程常用操作方法</li>
+</ol>
+<ul>
+<li>sleep：运行—&gt;阻塞，当前线程立即交出CPU，进入阻塞态，不会释放对象锁</li>
+<li>yield：运行—&gt;就绪，当系统调度交出CPU，进入就绪状态，不会释放对线锁，只会让相同优先级的线程获取CPU。</li>
+<li>join：运行—&gt;阻塞，进入阻塞态，会释放对象锁。（join内部就是wait方法）</li>
+<li>wait：运行—&gt;阻塞，会释放对象锁，必须与synchronized搭配使用</li>
+<li>notify：阻塞—&gt;就绪，必须在同步方法或同步代码块中使用</li>
+<li>创建          就绪        运行        终止</li>
+</ul>
+<p>​    阻塞</p>
+<ul>
+<li>守护线程与用户线程</li>
+<li>默认创建的都是用户线程—-主线程</li>
+<li>守护线程：在后台执行，只要java中存在任意一个用户线程没有终止，守护线程就一直运行</li>
+<li>当JVM中最后一个用户线程终止，守护线程会随着JVM一同停止，GC进程。</li>
+</ul>
+<ol start="3">
+<li>线程同步</li>
+</ol>
+<ul>
+<li><p>多线程三个特性（原子性、可见性、有序性）任意一个不满足，都存在线程安全问题.</p>
+<ul>
+<li><p>synchronize实现线程安全</p>
+<ul>
+<li><p>同步代码块</p>
+<p>​        synchronize（锁的对象）{}</p>
+<p>​         -普通类</p>
+<p>​         -类，class</p>
+</li>
+<li><p>同步方法</p>
+</li>
+</ul>
+<p>​                 -成员同步方法：锁的是当前对象this</p>
+<p>​                 -静态同步方法：锁的是类的反射对象</p>
+<ul>
+<li>synchronize底层实现（对象的Monitor机制）</li>
+<li>任意一个对象都有MOnitor，synchronized对象锁实际上就是获取对象的Moniter。</li>
+<li>当前线要想要获得该锁的Monitor的流程</li>
+<li>先判断锁对象得Monitor计数器是否为0；<ul>
+<li>为0：表示此时Monitor还未被任何线程持有，当线程获取Monitor，并将线程置为自己，将Monitor的值+1；</li>
+<li>不为0：表示Monitor已经被线程持有，判断线程获取Monitor</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/# JVM/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:50:23.102Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/06/SE总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/表单标签/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:47:36.276Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/注解如同标签/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:44:26.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/09/06/注解如同标签/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/06/JDBC的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/SE总结/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:29:25.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/JDBC的使用/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程（一）"><span class="toc-number">1.</span> <span class="toc-text">多线程（一）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/Linux：常用命令：/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/网络/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -335,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

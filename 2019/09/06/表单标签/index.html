@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | 我的博客</title>
+  <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="web前端1.HTML的表单标签：​                        form ​                              *action：向后台服务器提交的地址URL（访问服务器） ​                                                web服务器 2.表单标签的具体分类： 表单项 文本输入框 密码框 日期框 文件上传">
+<meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/表单标签/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="web前端1.HTML的表单标签：​                        form ​                              *action：向后台服务器提交的地址URL（访问服务器） ​                                                web服务器 2.表单标签的具体分类： 表单项 文本输入框 密码框 日期框 文件上传">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-06T09:47:09.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客">
+<meta name="twitter:description" content="web前端1.HTML的表单标签：​                        form ​                              *action：向后台服务器提交的地址URL（访问服务器） ​                                                web服务器 2.表单标签的具体分类： 表单项 文本输入框 密码框 日期框 文件上传">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -150,169 +154,270 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-表单标签" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="web前端"><a href="#web前端" class="headerlink" title="web前端"></a>web前端</h2><h2 id="1-HTML的表单标签："><a href="#1-HTML的表单标签：" class="headerlink" title="1.HTML的表单标签："></a>1.HTML的表单标签：</h2><p>​                        form</p>
+<p>​                              *action：向后台服务器提交的地址URL（访问服务器）</p>
+<p>​                                                web服务器</p>
+<h2 id="2-表单标签的具体分类："><a href="#2-表单标签的具体分类：" class="headerlink" title="2.表单标签的具体分类："></a>2.表单标签的具体分类：</h2><ul>
+<li>表单项<ul>
+<li>文本输入框</li>
+<li>密码框</li>
+<li>日期框</li>
+<li>文件上传</li>
+<li>下拉菜单</li>
+<li>隐藏框</li>
+<li>文本框</li>
+<li>按钮（普通按钮，提交按钮）</li>
+<li>单选按钮</li>
+<li>复选框</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>表单标签：</p>
+<ul>
+<li><p>应用场景</p>
+<ul>
+<li><p>注册</p>
+</li>
+<li><p>登录</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>input标签</p>
+<ul>
+<li>type=“text” ：文本输入框</li>
+<li>type=“password”  ：密码输入框</li>
+<li>type=“radio”   ：单选按钮</li>
+<li>type=“checxkbox” ：复选框</li>
+<li>type=“date“ ：（h5提供的日期组件） </li>
+<li>type=“tel”：（h5提供的组件） </li>
+<li>type=“file” ：上传文件</li>
+<li>type=“hidden” ：隐藏域</li>
+<li>type=“button”  普通按钮，必须指定value属性</li>
+<li>type=“submit” ：提交</li>
+<li>type=“result”  ：重置按钮</li>
+</ul>
+</li>
+<li><p>select</p>
+<ul>
+<li>下拉菜单<ul>
+<li>option：指定列表项，下拉菜单 （应用场景：籍贯选择）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>textarea ：描述框</p>
+<ul>
+<li>cols：指定列数，每一行有多少个字符</li>
+<li>rows：默认多少行</li>
+</ul>
+</li>
+</ul>
+<p>1.框架标签：frame</p>
+<ul>
+<li>frame属性<ul>
+<li>rows：（从上往下看）横向划分</li>
+</ul>
+</li>
+</ul>
+<p>3.CSS的基本使用：给html标签添加修饰</p>
+<ul>
+<li><p>三种方式</p>
+<ul>
+<li>行内样式（一般不使用）</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 标签中指定style属性：书写样式
+      style=&quot;css样式属性1:css样式属性值1;css样式属性2：值2;...&quot;
+        弊端：
+            1)一次只能控制一个标签
+            2)样式代码和html混合使用，不利于后期管理</code></pre><ul>
+<li><p>内部（推荐）</p>
+<p>​    需要在head标签体中指定style标签<br>​                格式<br>​                        选择器{<br>​                            css样式属性1:值1;<br>​                            css属性属性2：值2;<br>​                            ….<br>​                            </p>
+<p>​                                                  }</p>
+<p>​             比第一种方式优越，但是也不利于管理</p>
+</li>
+</ul>
+<ul>
+<li><p>外部 (外联）样式（前端中开发中使用）</p>
+<ul>
+<li><p>创建一个外部的CSS文件</p>
+</li>
+<li><p>引入外部的CSS文件</p>
+</li>
+<li><p>在head中指定link标签</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>CSS选择器</p>
+<ul>
+<li>基本选择器3个<ul>
+<li>格式：标签名称</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/# JVM/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:50:23.102Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/06/表单标签/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/表单标签/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:47:36.276Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/注解如同标签/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:44:26.436Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/09/06/# JVM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/06/注解如同标签/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/SE总结/" class="archive-article-date">
-  	<time datetime="2019-09-06T09:29:25.545Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/JDBC的使用/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web前端"><span class="toc-number">1.</span> <span class="toc-text">web前端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-HTML的表单标签："><span class="toc-number">2.</span> <span class="toc-text">1.HTML的表单标签：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-表单标签的具体分类："><span class="toc-number">3.</span> <span class="toc-text">2.表单标签的具体分类：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/Linux：常用命令：/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/06/网络/" class="archive-article-date">
-  	<time datetime="2019-09-06T08:53:01.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -335,8 +440,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
