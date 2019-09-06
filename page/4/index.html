@@ -8,20 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="计算机网络应用层应用层和程序员最贴近的部分，也包含很多很多的协议 有一类协议叫做“自定义协议”：客服端给服务器端发送的信息是什么格式服务器返回给客户 端的信息有事什么格式。 客户端：主动发起请求的一方称为客户端 服务器：被动接受请求的一端称为服务器  请求（request）和响应（response）中包含的信心有哪些 请求数据和响应数据如何组织（如何按照什么格式来序列化）   序列化：把对象变成">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://yoursite.com/2019/09/06/网络/index.html">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="计算机网络应用层应用层和程序员最贴近的部分，也包含很多很多的协议 有一类协议叫做“自定义协议”：客服端给服务器端发送的信息是什么格式服务器返回给客户 端的信息有事什么格式。 客户端：主动发起请求的一方称为客户端 服务器：被动接受请求的一端称为服务器  请求（request）和响应（response）中包含的信心有哪些 请求数据和响应数据如何组织（如何按照什么格式来序列化）   序列化：把对象变成">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pvhod4ytm.bkt.clouddn.com/1564286369150.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/06/网络/C:%5CUsers%5C%E5%90%91%E9%98%B3%5CAppData%5CLocal%5CTemp%5C1564287709320.png">
-<meta property="og:updated_time" content="2019-09-05T16:32:00.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="计算机网络应用层应用层和程序员最贴近的部分，也包含很多很多的协议 有一类协议叫做“自定义协议”：客服端给服务器端发送的信息是什么格式服务器返回给客户 端的信息有事什么格式。 客户端：主动发起请求的一方称为客户端 服务器：被动接受请求的一端称为服务器  请求（request）和响应（response）中包含的信心有哪些 请求数据和响应数据如何组织（如何按照什么格式来序列化）   序列化：把对象变成">
-<meta name="twitter:image" content="http://pvhod4ytm.bkt.clouddn.com/1564286369150.png">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -157,7 +150,544 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-网络" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-注解如同标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <a href="https://blog.csdn.net/briblue/article/details/73824058" target="_blank" rel="noopener"></a></p>
+<p>文章开头先引入一处图片。</p>
+<p><img src="https://img-blog.csdn.net/20170627213329375?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYnJpYmx1ZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>这处图片引自老罗的博客。为了避免不必要的麻烦，首先声明我个人比较尊敬老罗的。至于为什么放这张图，自然是为本篇博文服务，接下来我自会说明。好了，可以开始今天的博文了。</p>
+<p>Annotation 中文译过来就是注解、标释的意思，在 Java 中注解是一个很重要的知识点，但经常还是有点让新手不容易理解。</p>
+<p><strong>我个人认为，比较糟糕的技术文档主要特征之一就是：用专业名词来介绍专业名词。</strong></p>
+<p>比如：</p>
+<blockquote>
+<p>Java 注解用于为 Java 代码提供元数据。作为元数据，注解不直接影响你的代码执行，但也有一些类型的注解实际上可以用于这一目的。Java 注解是从 Java5 开始添加到 Java 的。</p>
+</blockquote>
+<p>这是大多数网站上对于 Java 注解，解释确实正确，但是说实在话，我第一次学习的时候，头脑一片空白。这什么跟什么啊？听了像没有听一样。因为概念太过于抽象，所以初学者实在是比较吃力才能够理解，然后随着自己开发过程中不断地强化练习，才会慢慢对它形成正确的认识。</p>
+<p>我在写这篇文章的时候，我就在思考。如何让自己或者让读者能够比较直观地认识注解这个概念？是要去官方文档上翻译说明吗？我马上否定了这个答案。</p>
+<p>后来，我想到了一样东西————墨水，墨水可以挥发、可以有不同的颜色，用来解释注解正好。</p>
+<p>不过，我继续发散思维后，想到了一样东西能够更好地代替墨水，那就是印章。印章可以沾上不同的墨水或者印泥，可以定制印章的文字或者图案，如果愿意它也可以被戳到你任何想戳的物体表面。</p>
+<p>但是，我再继续发散思维后，又想到一样东西能够更好地代替印章，那就是标签。标签是一张便利纸，标签上的内容可以自由定义。常见的如货架上的商品价格标签、图书馆中的书本编码标签、实验室中化学材料的名称类别标签等等。</p>
+<p>并且，往抽象地说，标签并不一定是一张纸，它可以是对人和事物的属性评价。也就是说，标签具备对于抽象事物的解释。</p>
+<p><img src="https://img-blog.csdn.net/20170627213419176?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYnJpYmx1ZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>所以，基于如此，我完成了自我的知识认知升级，我决定用标签来解释注解。</p>
+<h1 id="注解如同标签"><a href="#注解如同标签" class="headerlink" title="注解如同标签"></a>注解如同标签</h1><p>回到博文开始的地方，之前某新闻客户端的评论有盖楼的习惯，于是 “乔布斯重新定义了手机、罗永浩重新定义了傻X” 就经常极为工整地出现在了评论楼层中，并且广大网友在相当长的一段时间内对于这种行为乐此不疲。这其实就是等同于贴标签的行为。</p>
+<p>在某些网友眼中，罗永浩就成了傻X的代名词。</p>
+<p><strong>广大网友给罗永浩贴了一个名为“傻x”的标签，他们并不真正了解罗永浩，不知道他当教师、砸冰箱、办博客的壮举，但是因为“傻x”这样的标签存在，这有助于他们直接快速地对罗永浩这个人做出评价，然后基于此，罗永浩就可以成为茶余饭后的谈资，这就是标签的力量。</strong></p>
+<p>而在网络的另一边，老罗靠他的人格魅力自然收获一大批忠实的拥泵，他们对于老罗贴的又是另一种标签。<br><img src="https://img-blog.csdn.net/20170627213530055?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYnJpYmx1ZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>老罗还是老罗，但是由于人们对于它贴上的标签不同，所以造成对于他的看法大相径庭，不喜欢他的人整天在网络上评论抨击嘲讽，而崇拜欣赏他的人则会愿意挣钱购买锤子手机的发布会门票。</p>
+<p>我无意于评价这两种行为，我再引个例子。</p>
+<p>《奇葩说》是近年网络上非常火热的辩论节目，其中辩手陈铭被另外一个辩手马薇薇攻击说是————“站在宇宙中心呼唤爱”，然后贴上了一个大大的标签————“鸡汤男”，自此以后，观众再看到陈铭的时候，首先映入脑海中便是“鸡汤男”三个大字，其实本身而言陈铭非常优秀，为人师表、作风正派、谈吐举止得体，但是在网络中，因为娱乐至上的环境所致，人们更愿意以娱乐的心态来认知一切，于是“鸡汤男”就如陈铭自己所说成了一个撕不了的标签。</p>
+<p><strong>我们可以抽象概括一下，标签是对事物行为的某些角度的评价与解释。</strong></p>
+<p>到这里，终于可以引出本文的主角注解了。</p>
+<p><strong>初学者可以这样理解注解：想像代码具有生命，注解就是对于代码中某些鲜活个体的贴上去的一张标签。简化来讲，注解如同一张标签。</strong></p>
+<p>在未开始学习任何注解具体语法而言，你可以把注解看成一张标签。这有助于你快速地理解它的大致作用。如果初学者在学习过程有大脑放空的时候，请不要慌张，对自己说：</p>
+<p>注解，标签。注解，标签。</p>
+<h1 id="注解语法"><a href="#注解语法" class="headerlink" title="注解语法"></a>注解语法</h1><p>因为平常开发少见，相信有不少的人员会认为注解的地位不高。其实同 classs 和 interface 一样，注解也属于一种类型。它是在 Java SE 5.0 版本中开始引入的概念。</p>
+<h2 id="注解的定义"><a href="#注解的定义" class="headerlink" title="注解的定义"></a>注解的定义</h2><p>注解通过 <code>@interface</code> 关键字进行定义。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TestAnnotation &#123;</span><br><span class="line">&#125;<span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>它的形式跟接口很类似，不过前面多了一个 @ 符号。上面的代码就创建了一个名字为 TestAnnotaion 的注解。</p>
+<p>你可以简单理解为创建了一张名字为 TestAnnotation 的标签。</p>
+<h2 id="注解的应用"><a href="#注解的应用" class="headerlink" title="注解的应用"></a>注解的应用</h2><p>上面创建了一个注解，那么注解的的使用方法是什么呢。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">&#125;<span class="number">123123</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一个类 Test,然后在类定义的地方加上 @TestAnnotation 就可以用 TestAnnotation 注解这个类了。</p>
+<p>你可以简单理解为将 TestAnnotation 这张标签贴到 Test 这个类上面。</p>
+<p>不过，要想注解能够正常工作，还需要介绍一下一个新的概念那就是元注解。</p>
+<h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>元注解是什么意思呢？</p>
+<p>元注解是可以注解到注解上的注解，或者说元注解是一种基本注解，但是它能够应用到其它的注解上面。</p>
+<p>如果难于理解的话，你可以这样理解。元注解也是一张标签，但是它是一张特殊的标签，它的作用和目的就是给其他普通的标签进行解释说明的。</p>
+<p>元标签有 @Retention、@Documented、@Target、@Inherited、@Repeatable 5 种。</p>
+<h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><p>Retention 的英文意为保留期的意思。当 @Retention 应用到一个注解上的时候，它解释说明了这个注解的的存活时间。</p>
+<p>它的取值如下：<br>- RetentionPolicy.SOURCE 注解只在源码阶段保留，在编译器进行编译时它将被丢弃忽视。<br>- RetentionPolicy.CLASS 注解只被保留到编译进行的时候，它并不会被加载到 JVM 中。<br>- RetentionPolicy.RUNTIME 注解可以保留到程序运行的时候，它会被加载进入到 JVM 中，所以在程序运行时可以获取到它们。</p>
+<p>我们可以这样的方式来加深理解，@Retention 去给一张标签解释的时候，它指定了这张标签张贴的时间。@Retention 相当于给一张标签上面盖了一张时间戳，时间戳指明了标签张贴的时间周期。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TestAnnotation &#123;</span><br><span class="line">&#125;<span class="number">123123</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中，我们指定 TestAnnotation 可以在程序运行周期被获取到，因此它的生命周期非常的长。</p>
+<h3 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h3><p>顾名思义，这个元注解肯定是和文档有关。它的作用是能够将注解中的元素包含到 Javadoc 中去。</p>
+<h3 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h3><p>Target 是目标的意思，@Target 指定了注解运用的地方。</p>
+<p>你可以这样理解，当一个注解被 @Target 注解时，这个注解就被限定了运用的场景。</p>
+<p>类比到标签，原本标签是你想张贴到哪个地方就到哪个地方，但是因为 @Target 的存在，它张贴的地方就非常具体了，比如只能张贴到方法上、类上、方法参数上等等。@Target 有下面的取值</p>
+<ul>
+<li>ElementType.ANNOTATION_TYPE 可以给一个注解进行注解</li>
+<li>ElementType.CONSTRUCTOR 可以给构造方法进行注解</li>
+<li>ElementType.FIELD 可以给属性进行注解</li>
+<li>ElementType.LOCAL_VARIABLE 可以给局部变量进行注解</li>
+<li>ElementType.METHOD 可以给方法进行注解</li>
+<li>ElementType.PACKAGE 可以给一个包进行注解</li>
+<li>ElementType.PARAMETER 可以给一个方法内的参数进行注解</li>
+<li>ElementType.TYPE 可以给一个类型进行注解，比如类、接口、枚举</li>
+</ul>
+<h3 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h3><p>Inherited 是继承的意思，但是它并不是说注解本身可以继承，而是说如果一个超类被 @Inherited 注解过的注解进行注解的话，那么如果它的子类没有被任何注解应用的话，那么这个子类就继承了超类的注解。<br>说的比较抽象。代码来解释。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@interface</span> Test &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;&#125;</span><br><span class="line"><span class="number">12345678910111234567891011</span></span><br></pre></td></tr></table></figure>
+
+<p>注解 Test 被 @Inherited 修饰，之后类 A 被 Test 注解，类 B 继承 A,类 B 也拥有 Test 这个注解。</p>
+<p>可以这样理解：</p>
+<p>老子非常有钱，所以人们给他贴了一张标签叫做富豪。</p>
+<p>老子的儿子长大后，只要没有和老子断绝父子关系，虽然别人没有给他贴标签，但是他自然也是富豪。</p>
+<p>老子的孙子长大了，自然也是富豪。</p>
+<p>这就是人们口中戏称的富一代，富二代，富三代。虽然叫法不同，好像好多个标签，但其实事情的本质也就是他们有一张共同的标签，也就是老子身上的那张富豪的标签。</p>
+<h3 id="Repeatable"><a href="#Repeatable" class="headerlink" title="@Repeatable"></a>@Repeatable</h3><p>Repeatable 自然是可重复的意思。@Repeatable 是 Java 1.8 才加进来的，所以算是一个新的特性。</p>
+<p>什么样的注解会多次应用呢？通常是注解的值可以同时取多个。</p>
+<p>举个例子，一个人他既是程序员又是产品经理,同时他还是个画家。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> Persons &#123;</span><br><span class="line">    Person[]  value();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Repeatable</span>(Persons.class)</span><br><span class="line"><span class="meta">@interface</span> Person&#123;</span><br><span class="line">    String role <span class="keyword">default</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Person</span>(role=<span class="string">"artist"</span>)</span><br><span class="line"><span class="meta">@Person</span>(role=<span class="string">"coder"</span>)</span><br><span class="line"><span class="meta">@Person</span>(role=<span class="string">"PM"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuperMan</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121314151617181912345678910111213141516171819</span></span><br></pre></td></tr></table></figure>
+
+<p>注意上面的代码，@Repeatable 注解了 Person。而 @Repeatable 后面括号中的类相当于一个容器注解。</p>
+<p>什么是容器注解呢？就是用来存放其它注解的地方。它本身也是一个注解。</p>
+<p>我们再看看代码中的相关容器注解。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> Persons &#123;</span><br><span class="line">    Person[]  value();</span><br><span class="line">&#125;<span class="number">123123</span></span><br></pre></td></tr></table></figure>
+
+<p>按照规定，它里面必须要有一个 value 的属性，属性类型是一个被 @Repeatable 注解过的注解数组，注意它是数组。</p>
+<p>如果不好理解的话，可以这样理解。Persons 是一张总的标签，上面贴满了 Person 这种同类型但内容不一样的标签。把 Persons 给一个 SuperMan 贴上，相当于同时给他贴了程序员、产品经理、画家的标签。</p>
+<p>我们可能对于 @Person(role=”PM”) 括号里面的内容感兴趣，它其实就是给 Person 这个注解的 role 属性赋值为 PM ，大家不明白正常，马上就讲到注解的属性这一块。</p>
+<h2 id="注解的属性"><a href="#注解的属性" class="headerlink" title="注解的属性"></a>注解的属性</h2><p>注解的属性也叫做成员变量。注解只有成员变量，没有方法。注解的成员变量在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该成员变量的名字，其返回值定义了该成员变量的类型。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TestAnnotation &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">id</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">msg</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;<span class="number">123456789123456789</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码定义了 TestAnnotation 这个注解中拥有 id 和 msg 两个属性。在使用的时候，我们应该给它们进行赋值。</p>
+<p>赋值的方式是在注解的括号内以 value=”” 形式，多个属性之前用 ，隔开。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation</span>(id=<span class="number">3</span>,msg=<span class="string">"hello annotation"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="number">12341234</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，在注解中定义属性时它的类型必须是 8 种基本数据类型外加 类、接口、注解及它们的数组。</p>
+<p>注解中属性可以有默认值，默认值需要用 default 关键值指定。比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> TestAnnotation &#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">id</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">msg</span><span class="params">()</span> <span class="keyword">default</span> "Hi"</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891012345678910</span></span><br></pre></td></tr></table></figure>
+
+<p>TestAnnotation 中 id 属性默认值为 -1，msg 属性默认值为 Hi。<br>它可以这样应用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation</span>()</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;&#125;<span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>因为有默认值，所以无需要再在 @TestAnnotation 后面的括号里面进行赋值了，这一步可以省略。</p>
+<p>另外，还有一种情况。如果一个注解内仅仅只有一个名字为 value 的属性时，应用这个注解时可以直接接属性值填写到括号内。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Check &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;<span class="number">123123</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，Check 这个注解只有 value 这个属性。所以可以这样应用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Check</span>(<span class="string">"hi"</span>)</span><br><span class="line"><span class="keyword">int</span> a;<span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>这和下面的效果是一样的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Check</span>(value=<span class="string">"hi"</span>)</span><br><span class="line"><span class="keyword">int</span> a;<span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>最后，还需要注意的一种情况是一个注解没有任何属性。比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Perform &#123;&#125;</span><br><span class="line"><span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>那么在应用这个注解的时候，括号都可以省略。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Perform</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span><span class="params">()</span></span>&#123;&#125;<span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Java-预置的注解"><a href="#Java-预置的注解" class="headerlink" title="Java 预置的注解"></a>Java 预置的注解</h1><p>学习了上面相关的知识，我们已经可以自己定义一个注解了。其实 Java 语言本身已经提供了几个现成的注解。</p>
+<h2 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h2><p>这个元素是用来标记过时的元素，想必大家在日常开发中经常碰到。编译器在编译阶段遇到这个注解时会发出提醒警告，告诉开发者正在调用一个过时的元素比如过时的方法、过时的类、过时的成员变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Deprecated</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Noting has to say!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I have a dream!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123456789101112131415123456789101112131415</span></span><br></pre></td></tr></table></figure>
+
+<p>定义了一个 Hero 类，它有两个方法 say() 和 speak() ，其中 say() 被 @Deprecated 注解。然后我们在 IDE 中分别调用它们。<br><img src="https://img-blog.csdn.net/20170627214008588?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYnJpYmx1ZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>可以看到，say() 方法上面被一条直线划了一条，这其实就是编译器识别后的提醒效果。</p>
+<h3 id="Override"><a href="#Override" class="headerlink" title="@Override"></a>@Override</h3><p>这个大家应该很熟悉了，提示子类要复写父类中被 @Override 修饰的方法</p>
+<h3 id="SuppressWarnings"><a href="#SuppressWarnings" class="headerlink" title="@SuppressWarnings"></a>@SuppressWarnings</h3><p>阻止警告的意思。之前说过调用被 @Deprecated 注解的方法后，编译器会警告提醒，而有时候开发者会忽略这种警告，他们可以在调用的地方通过 @SuppressWarnings 达到目的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Hero hero = <span class="keyword">new</span> Hero();</span><br><span class="line">    hero.say();</span><br><span class="line">    hero.speak();</span><br><span class="line">&#125;<span class="number">123456123456</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="SafeVarargs"><a href="#SafeVarargs" class="headerlink" title="@SafeVarargs"></a>@SafeVarargs</h3><p>参数安全类型注解。它的目的是提醒开发者不要用参数做一些不安全的操作,它的存在会阻止编译器产生 unchecked 这样的警告。它是在 Java 1.7 的版本中加入的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SafeVarargs</span> <span class="comment">// Not actually safe!</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m</span><span class="params">(List&lt;String&gt;... stringLists)</span> </span>&#123;</span><br><span class="line">    Object[] array = stringLists;</span><br><span class="line">    List&lt;Integer&gt; tmpList = Arrays.asList(<span class="number">42</span>);</span><br><span class="line">    array[<span class="number">0</span>] = tmpList; <span class="comment">// Semantically invalid, but compiles without warnings</span></span><br><span class="line">    String s = stringLists[<span class="number">0</span>].get(<span class="number">0</span>); <span class="comment">// Oh no, ClassCastException at runtime!</span></span><br><span class="line">&#125;<span class="number">12345671234567</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中，编译阶段不会报错，但是运行时会抛出 ClassCastException 这个异常，所以它虽然告诉开发者要妥善处理，但是开发者自己还是搞砸了。</p>
+<p>Java 官方文档说，未来的版本会授权编译器对这种不安全的操作产生错误警告。</p>
+<h3 id="FunctionalInterface"><a href="#FunctionalInterface" class="headerlink" title="@FunctionalInterface"></a>@FunctionalInterface</h3><p>函数式接口注解，这个是 Java 1.8 版本引入的新特性。函数式编程很火，所以 Java 8 也及时添加了这个特性。</p>
+<p><strong>函数式接口 (Functional Interface) 就是一个具有一个方法的普通接口。</strong></p>
+<p>比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * When an object implementing interface &lt;code&gt;Runnable&lt;/code&gt; is used</span></span><br><span class="line"><span class="comment">     * to create a thread, starting the thread causes the object's</span></span><br><span class="line"><span class="comment">     * &lt;code&gt;run&lt;/code&gt; method to be called in that separately executing</span></span><br><span class="line"><span class="comment">     * thread.</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * The general contract of the method &lt;code&gt;run&lt;/code&gt; is that it may</span></span><br><span class="line"><span class="comment">     * take any action whatsoever.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span>     java.lang.Thread#run()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121314151612345678910111213141516</span></span><br></pre></td></tr></table></figure>
+
+<p>我们进行线程开发中常用的 Runnable 就是一个典型的函数式接口，上面源码可以看到它就被 @FunctionalInterface 注解。</p>
+<p>可能有人会疑惑，函数式接口标记有什么用，这个原因是函数式接口可以很容易转换为 Lambda 表达式。这是另外的主题了，有兴趣的同学请自己搜索相关知识点学习。</p>
+<h1 id="注解的提取"><a href="#注解的提取" class="headerlink" title="注解的提取"></a>注解的提取</h1><p>博文前面的部分讲了注解的基本语法，现在是时候检测我们所学的内容了。</p>
+<p>我通过用标签来比作注解，前面的内容是讲怎么写注解，然后贴到哪个地方去，而现在我们要做的工作就是检阅这些标签内容。 形象的比喻就是你把这些注解标签在合适的时候撕下来，然后检阅上面的内容信息。</p>
+<p>要想正确检阅注解，离不开一个手段，那就是反射。</p>
+<h2 id="注解与反射。"><a href="#注解与反射。" class="headerlink" title="注解与反射。"></a>注解与反射。</h2><p>注解通过反射获取。首先可以通过 Class 对象的 isAnnotationPresent() 方法判断它是否应用了某个注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isAnnotationPresent</span><span class="params">(Class&lt;? extends Annotation&gt; annotationClass)</span> </span>&#123;&#125;</span><br><span class="line"><span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>然后通过 getAnnotation() 方法来获取 Annotation 对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> &lt;A extends Annotation&gt; <span class="function">A <span class="title">getAnnotation</span><span class="params">(Class&lt;A&gt; annotationClass)</span> </span>&#123;&#125;</span><br><span class="line"><span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>或者是 getAnnotations() 方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Annotation[] getAnnotations() &#123;&#125;<span class="number">1212</span></span><br></pre></td></tr></table></figure>
+
+<p>前一种方法返回指定类型的注解，后一种方法返回注解到这个元素上的所有注解。</p>
+<p>如果获取到的 Annotation 如果不为 null，则就可以调用它们的属性方法了。比如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation</span>()</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> hasAnnotation = Test.class.isAnnotationPresent(TestAnnotation.class);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ( hasAnnotation ) &#123;</span><br><span class="line">            TestAnnotation testAnnotation = Test.class.getAnnotation(TestAnnotation.class);</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"id:"</span>+testAnnotation.id());</span><br><span class="line">            System.out.println(<span class="string">"msg:"</span>+testAnnotation.msg());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123456789101112131415161718123456789101112131415161718</span></span><br></pre></td></tr></table></figure>
+
+<p>程序的运行结果是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">id:-<span class="number">1</span></span><br><span class="line">msg:</span><br><span class="line"><span class="number">123123</span></span><br></pre></td></tr></table></figure>
+
+<p>这个正是 TestAnnotation 中 id 和 msg 的默认值。</p>
+<p>上面的例子中，只是检阅出了注解在类上的注解，其实属性、方法上的注解照样是可以的。同样还是要假手于反射。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation</span>(msg=<span class="string">"hello"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Check</span>(value=<span class="string">"hi"</span>)</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Perform</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Hero hero = <span class="keyword">new</span> Hero();</span><br><span class="line">        hero.say();</span><br><span class="line">        hero.speak();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> hasAnnotation = Test.class.isAnnotationPresent(TestAnnotation.class);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ( hasAnnotation ) &#123;</span><br><span class="line">            TestAnnotation testAnnotation = Test.class.getAnnotation(TestAnnotation.class);</span><br><span class="line">            <span class="comment">//获取类的注解</span></span><br><span class="line">            System.out.println(<span class="string">"id:"</span>+testAnnotation.id());</span><br><span class="line">            System.out.println(<span class="string">"msg:"</span>+testAnnotation.msg());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Field a = Test.class.getDeclaredField(<span class="string">"a"</span>);</span><br><span class="line">            a.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">            <span class="comment">//获取一个成员变量上的注解</span></span><br><span class="line">            Check check = a.getAnnotation(Check.class);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( check != <span class="keyword">null</span> ) &#123;</span><br><span class="line">                System.out.println(<span class="string">"check value:"</span>+check.value());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Method testMethod = Test.class.getDeclaredMethod(<span class="string">"testMethod"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ( testMethod != <span class="keyword">null</span> ) &#123;</span><br><span class="line">                <span class="comment">// 获取方法中的注解</span></span><br><span class="line">                Annotation[] ans = testMethod.getAnnotations();</span><br><span class="line">                <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>;i &lt; ans.length;i++) &#123;</span><br><span class="line">                    System.out.println(<span class="string">"method testMethod annotation:"</span>+ans[i].annotationType().getSimpleName());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchFieldException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SecurityException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchMethodException e) &#123;</span><br><span class="line">            <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697012345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970</span></span><br></pre></td></tr></table></figure>
+
+<p>它们的结果如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">id:-<span class="number">1</span></span><br><span class="line">msg:hello</span><br><span class="line">check value:hi</span><br><span class="line">method testMethod annotation:Perform</span><br><span class="line"><span class="number">1234512345</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，如果一个注解要在运行时被成功提取，那么 @Retention(RetentionPolicy.RUNTIME) 是必须的。</p>
+<h1 id="注解的使用场景"><a href="#注解的使用场景" class="headerlink" title="注解的使用场景"></a>注解的使用场景</h1><p>我相信博文讲到这里大家都很熟悉了注解，但是有不少同学肯定会问，注解到底有什么用呢？</p>
+<p>对啊注解到底有什么用？</p>
+<p>我们不妨将目光放到 Java 官方文档上来。</p>
+<p>文章开始的时候，我用标签来类比注解。但标签比喻只是我的手段，而不是目的。为的是让大家在初次学习注解时能够不被那些抽象的新概念搞懵。既然现在，我们已经对注解有所了解，我们不妨再仔细阅读官方最严谨的文档。</p>
+<blockquote>
+<p>注解是一系列元数据，它提供数据用来解释程序代码，但是注解并非是所解释的代码本身的一部分。注解对于代码的运行效果没有直接影响。</p>
+<p>注解有许多用处，主要如下：<br>- 提供信息给编译器： 编译器可以利用注解来探测错误和警告信息<br>- 编译阶段时的处理： 软件工具可以用来利用注解信息来生成代码、Html文档或者做其它相应处理。<br>- 运行时的处理： 某些注解可以在程序运行的时候接受代码的提取</p>
+</blockquote>
+<p>值得注意的是，注解不是代码本身的一部分。</p>
+<p>如果难于理解，可以这样看。罗永浩还是罗永浩，不会因为某些人对于他“傻x”的评价而改变，标签只是某些人对于其他事物的评价，但是标签不会改变事物本身，标签只是特定人群的手段。所以，注解同样无法改变代码本身，注解只是某些工具的的工具。</p>
+<p>还是回到官方文档的解释上，注解主要针对的是编译器和其它工具软件(SoftWare tool)。</p>
+<p>当开发者使用了Annotation 修饰了类、方法、Field 等成员之后，这些 Annotation 不会自己生效，必须由开发者提供相应的代码来提取并处理 Annotation 信息。这些处理提取和处理 Annotation 的代码统称为 APT（Annotation Processing Tool)。</p>
+<p><strong>现在，我们可以给自己答案了，注解有什么用？给谁用？给 编译器或者 APT 用的。</strong></p>
+<p>如果，你还是没有搞清楚的话，我亲自写一个好了。</p>
+<h1 id="亲手自定义注解完成某个目的"><a href="#亲手自定义注解完成某个目的" class="headerlink" title="亲手自定义注解完成某个目的"></a>亲手自定义注解完成某个目的</h1><p>我要写一个测试框架，测试程序员的代码有无明显的异常。</p>
+<p>—— 程序员 A : 我写了一个类，它的名字叫做 NoBug，因为它所有的方法都没有错误。<br>—— 我：自信是好事，不过为了防止意外，让我测试一下如何？<br>—— 程序员 A: 怎么测试？<br>—— 我：把你写的代码的方法都加上 @Jiecha 这个注解就好了。<br>—— 程序员 A: 好的。</p>
+<p><strong>NoBug.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ceshi;</span><br><span class="line"><span class="keyword">import</span> ceshi.Jiecha;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NoBug</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Jiecha</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">suanShu</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1234567890"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Jiecha</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jiafa</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1+1="</span>+<span class="number">1</span>+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Jiecha</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jiefa</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"1-1="</span>+(<span class="number">1</span>-<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Jiecha</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">chengfa</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"3 x 5="</span>+ <span class="number">3</span>*<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Jiecha</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">chufa</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"6 / 0="</span>+ <span class="number">6</span> / <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ziwojieshao</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我写的程序没有 bug!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;<span class="number">12345678910111213141516171819202122232425262728293031321234567891011121314151617181920212223242526272829303132</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码，有些方法上面运用了 @Jiecha 注解。</p>
+<p>这个注解是我写的测试软件框架中定义的注解。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ceshi;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Jiecha &#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="number">123456789123456789</span></span><br></pre></td></tr></table></figure>
+
+<p>然后，我再编写一个测试类 TestTool 就可以测试 NoBug 相应的方法了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> ceshi;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestTool</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">        NoBug testobj = <span class="keyword">new</span> NoBug();</span><br><span class="line"></span><br><span class="line">        Class clazz = testobj.getClass();</span><br><span class="line"></span><br><span class="line">        Method[] method = clazz.getDeclaredMethods();</span><br><span class="line">        <span class="comment">//用来记录测试产生的 log 信息</span></span><br><span class="line">        StringBuilder log = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="comment">// 记录异常的次数</span></span><br><span class="line">        <span class="keyword">int</span> errornum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( Method m: method ) &#123;</span><br><span class="line">            <span class="comment">// 只有被 @Jiecha 标注过的方法才进行测试</span></span><br><span class="line">            <span class="keyword">if</span> ( m.isAnnotationPresent( Jiecha.class )) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    m.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">                    m.invoke(testobj, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    <span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">                    <span class="comment">//e.printStackTrace();</span></span><br><span class="line">                    errornum++;</span><br><span class="line">                    log.append(m.getName());</span><br><span class="line">                    log.append(<span class="string">" "</span>);</span><br><span class="line">                    log.append(<span class="string">"has error:"</span>);</span><br><span class="line">                    log.append(<span class="string">"\n\r  caused by "</span>);</span><br><span class="line">                    <span class="comment">//记录测试过程中，发生的异常的名称</span></span><br><span class="line">                    log.append(e.getCause().getClass().getSimpleName());</span><br><span class="line">                    log.append(<span class="string">"\n\r"</span>);</span><br><span class="line">                    <span class="comment">//记录测试过程中，发生的异常的具体信息</span></span><br><span class="line">                    log.append(e.getCause().getMessage());</span><br><span class="line">                    log.append(<span class="string">"\n\r"</span>);</span><br><span class="line">                &#125; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        log.append(clazz.getSimpleName());</span><br><span class="line">        log.append(<span class="string">" has  "</span>);</span><br><span class="line">        log.append(errornum);</span><br><span class="line">        log.append(<span class="string">" error."</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成测试报告</span></span><br><span class="line">        System.out.println(log.toString());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960</span></span><br></pre></td></tr></table></figure>
+
+<p>测试的结果是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1234567890</span></span><br><span class="line"><span class="number">1</span>+<span class="number">1</span>=<span class="number">11</span></span><br><span class="line"><span class="number">1</span>-<span class="number">1</span>=<span class="number">0</span></span><br><span class="line"><span class="number">3</span> x <span class="number">5</span>=<span class="number">15</span></span><br><span class="line">chufa has error:</span><br><span class="line"></span><br><span class="line">  caused by ArithmeticException</span><br><span class="line"></span><br><span class="line">/ by zero</span><br><span class="line"></span><br><span class="line">NoBug has  <span class="number">1</span> error.</span><br><span class="line"><span class="number">123456789101112123456789101112</span></span><br></pre></td></tr></table></figure>
+
+<p>提示 NoBug 类中的 chufa() 这个方法有异常，这个异常名称叫做 ArithmeticException，原因是运算过程中进行了除 0 的操作。</p>
+<p>所以，NoBug 这个类有 Bug。</p>
+<p>这样，通过注解我完成了我自己的目的，那就是对别人的代码进行测试。</p>
+<p><strong>所以，再问我注解什么时候用？我只能告诉你，这取决于你想利用它干什么用。</strong></p>
+<h2 id="注解应用实例"><a href="#注解应用实例" class="headerlink" title="注解应用实例"></a>注解应用实例</h2><p>注解运用的地方太多了，因为我是 Android 开发者，所以我接触到的具体例子有下：</p>
+<h3 id="JUnit"><a href="#JUnit" class="headerlink" title="JUnit"></a>JUnit</h3><p>JUnit 这个是一个测试框架，典型使用方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampleUnitTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addition_isCorrect</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">4</span>, <span class="number">2</span> + <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="number">123456123456</span></span><br></pre></td></tr></table></figure>
+
+<p>@Test 标记了要进行测试的方法 addition_isCorrect().</p>
+<h3 id="ButterKnife"><a href="#ButterKnife" class="headerlink" title="ButterKnife"></a>ButterKnife</h3><p>ButterKnife 是 Android 开发中大名鼎鼎的 IOC 框架，它减少了大量重复的代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BindView</span>(R.id.tv_test)</span><br><span class="line">    TextView mTv;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1234567891011121312345678910111213</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Dagger2"><a href="#Dagger2" class="headerlink" title="Dagger2"></a>Dagger2</h3><p>也是一个很有名的依赖注入框架。</p>
+<h3 id="Retrofit"><a href="#Retrofit" class="headerlink" title="Retrofit"></a>Retrofit</h3><p>很牛逼的 Http 网络访问框架</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">GitHubService</span> </span>&#123;</span><br><span class="line">  <span class="meta">@GET</span>(<span class="string">"users/&#123;user&#125;/repos"</span>)</span><br><span class="line">  Call&lt;List&lt;Repo&gt;&gt; listRepos(<span class="meta">@Path</span>(<span class="string">"user"</span>) String user);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Retrofit retrofit = <span class="keyword">new</span> Retrofit.Builder()</span><br><span class="line">    .baseUrl(<span class="string">"https://api.github.com/"</span>)</span><br><span class="line">    .build();</span><br><span class="line"></span><br><span class="line">GitHubService service = retrofit.create(GitHubService.class);</span><br><span class="line"><span class="number">12345678910111234567891011</span></span><br></pre></td></tr></table></figure>
+
+<p>当然，还有许多注解应用的地方，这里不一一列举。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>如果注解难于理解，你就把它类同于标签，标签为了解释事物，注解为了解释代码。</li>
+<li>注解的基本语法，创建如同接口，但是多了个 @ 符号。</li>
+<li>注解的元注解。</li>
+<li>注解的属性。</li>
+<li>注解主要给编译器及工具类型的软件用的。</li>
+<li>注解的提取需要借助于 Java 的反射技术，反射比较慢，所以注解使用时也需要谨慎计较时间成本。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/注解如同标签/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-多线程总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="多线程（一）"><a href="#多线程（一）" class="headerlink" title="多线程（一）"></a>多线程（一）</h2><ol>
+<li>进程与线程</li>
+</ol>
+<ul>
+<li>进程是OS中资源分配的最小单元</li>
+<li>进程是OS中任务分配的最小单元</li>
+<li>创建于销毁一个线程的开销要比一个进程小的多，线程间通信也比进程间容易的多</li>
+<li>线程间通信：join（）。wait/notify。yield。sleep</li>
+</ul>
+<ol start="2">
+<li>多线程常用操作方法</li>
+</ol>
+<ul>
+<li>sleep：运行—&gt;阻塞，当前线程立即交出CPU，进入阻塞态，不会释放对象锁</li>
+<li>yield：运行—&gt;就绪，当系统调度交出CPU，进入就绪状态，不会释放对线锁，只会让相同优先级的线程获取CPU。</li>
+<li>join：运行—&gt;阻塞，进入阻塞态，会释放对象锁。（join内部就是wait方法）</li>
+<li>wait：运行—&gt;阻塞，会释放对象锁，必须与synchronized搭配使用</li>
+<li>notify：阻塞—&gt;就绪，必须在同步方法或同步代码块中使用</li>
+<li>创建          就绪        运行        终止</li>
+</ul>
+<p>​    阻塞</p>
+<ul>
+<li>守护线程与用户线程</li>
+<li>默认创建的都是用户线程—-主线程</li>
+<li>守护线程：在后台执行，只要java中存在任意一个用户线程没有终止，守护线程就一直运行</li>
+<li>当JVM中最后一个用户线程终止，守护线程会随着JVM一同停止，GC进程。</li>
+</ul>
+<ol start="3">
+<li>线程同步</li>
+</ol>
+<ul>
+<li><p>多线程三个特性（原子性、可见性、有序性）任意一个不满足，都存在线程安全问题.</p>
+<ul>
+<li><p>synchronize实现线程安全</p>
+<ul>
+<li><p>同步代码块</p>
+<p>​        synchronize（锁的对象）{}</p>
+<p>​         -普通类</p>
+<p>​         -类，class</p>
+</li>
+<li><p>同步方法</p>
+</li>
+</ul>
+<p>​                 -成员同步方法：锁的是当前对象this</p>
+<p>​                 -静态同步方法：锁的是类的反射对象</p>
+<ul>
+<li>synchronize底层实现（对象的Monitor机制）</li>
+<li>任意一个对象都有MOnitor，synchronized对象锁实际上就是获取对象的Moniter。</li>
+<li>当前线要想要获得该锁的Monitor的流程</li>
+<li>先判断锁对象得Monitor计数器是否为0；<ul>
+<li>为0：表示此时Monitor还未被任何线程持有，当线程获取Monitor，并将线程置为自己，将Monitor的值+1；</li>
+<li>不为0：表示Monitor已经被线程持有，判断线程获取Monitor</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/多线程总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux：常用命令：" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="Linux简介及常用命令"><a href="#Linux简介及常用命令" class="headerlink" title="Linux简介及常用命令"></a>Linux简介及常用命令</h2><ol>
+<li><p>Linux简介</p>
+<p>Linux是一套免费使用和自由传播的<a href="https://baike.baidu.com/item/类Unix" target="_blank" rel="noopener">类Unix</a><a href="https://baike.baidu.com/item/操作系统/192" target="_blank" rel="noopener">操作系统</a>，是一个基于<a href="https://baike.baidu.com/item/POSIX" target="_blank" rel="noopener">POSIX</a>和Unix的多用户、<a href="https://baike.baidu.com/item/多任务/1011764" target="_blank" rel="noopener">多任务</a>、支持<a href="https://baike.baidu.com/item/多线程/1190404" target="_blank" rel="noopener">多线程</a>和多<a href="https://baike.baidu.com/item/CPU" target="_blank" rel="noopener">CPU</a>的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持<a href="https://baike.baidu.com/item/32位/5812218" target="_blank" rel="noopener">32位</a>和<a href="https://baike.baidu.com/item/64位" target="_blank" rel="noopener">64位</a>硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+</li>
+<li><p><img src="https://www.runoob.com/wp-content/uploads/2014/06/1511849829609658.jpg" alt="img"></p>
+</li>
+</ol>
+<p>Linux本质上是一个操作系统的内核</p>
+<ul>
+<li>内核负责：</li>
+</ul>
+<ol>
+<li>对硬件设备的管理</li>
+<li>对软件资源的管理</li>
+</ol>
+<p>Centos7=Linux内核+配套的应用程序</p>
+<p>以Linux为内核包装出来的操作系统有很多发行版：</p>
+<p>Ubuntu      Centos     Debain       Gentoo</p>
+<p>Android     Kali          Puppy      ……</p>
+<ol start="2">
+<li><h2 id="Linux：常用命令："><a href="#Linux：常用命令：" class="headerlink" title="Linux：常用命令："></a>Linux：常用命令：</h2></li>
+</ol>
+<ul>
+<li><h3 id="ls（list）"><a href="#ls（list）" class="headerlink" title="ls（list）"></a>ls（list）</h3><ul>
+<li>罗列出当前目录中的文件和目录</li>
+<li>更常用的是Is -l/ll打印出更详细的信息（通常是两个ll）</li>
+</ul>
+</li>
+<li><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><ul>
+<li><p>进入某个目录/切换某个目录</p>
+</li>
+<li><p>特殊的目录</p>
+<ul>
+<li><h5 id="表示当前目录"><a href="#表示当前目录" class="headerlink" title=". 表示当前目录"></a>. 表示当前目录</h5></li>
+<li><h5 id="表示当前目录的上级目录"><a href="#表示当前目录的上级目录" class="headerlink" title=".. 表示当前目录的上级目录"></a>.. 表示当前目录的上级目录</h5></li>
+<li><h5 id="表示当前用户的home目录"><a href="#表示当前用户的home目录" class="headerlink" title="~ 表示当前用户的home目录"></a>~ 表示当前用户的home目录</h5></li>
+<li><h5 id="表示根目录，所有目录的最上级目录（相当于windows的我的电脑）"><a href="#表示根目录，所有目录的最上级目录（相当于windows的我的电脑）" class="headerlink" title="/ 表示根目录，所有目录的最上级目录（相当于windows的我的电脑）"></a>/ 表示根目录，所有目录的最上级目录（相当于windows的我的电脑）</h5></li>
+</ul>
+</li>
+<li><p>Linux的目录结构也是一种树形结构</p>
+</li>
+</ul>
+<p>查看当前目录的完整路径（绝对路径）</p>
+<ol>
+<li>绝对路径：以/开头的目录</li>
+<li>相对路径：以.或者..开头的目录</li>
+<li>tree .    ：查看树结构</li>
+</ol>
+</li>
+<li><h3 id="touch：创建一个空文件"><a href="#touch：创建一个空文件" class="headerlink" title="touch：创建一个空文件"></a>touch：创建一个空文件</h3></li>
+<li><h3 id="cat-：-查看文件内容"><a href="#cat-：-查看文件内容" class="headerlink" title="cat   ： 查看文件内容"></a>cat   ： 查看文件内容</h3><ul>
+<li>使用tab键补全命令和路径</li>
+<li>使用Ctrl+l清楚路径</li>
+</ul>
+</li>
+<li><h3 id="less：查看文件内容，提供更丰富的支持"><a href="#less：查看文件内容，提供更丰富的支持" class="headerlink" title="less：查看文件内容，提供更丰富的支持"></a>less：查看文件内容，提供更丰富的支持</h3><ul>
+<li>使用上下箭头来滚动翻译</li>
+<li>less只能看，不能改。</li>
+<li>打开大文件特别快  懒加载</li>
+</ul>
+</li>
+<li><h3 id="vim-：查看并修改文件"><a href="#vim-：查看并修改文件" class="headerlink" title="vim ：查看并修改文件"></a>vim ：查看并修改文件</h3><ul>
+<li>使用起来非常不方便的程序但，但很nb</li>
+<li>区分模式<ul>
+<li>Normal：按下的键都是快捷键，不是真的输入文本</li>
+<li>Insert：才是真的输入文本（i进入，esc退出）</li>
+<li>Command： ：wq保存退出</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="mkdir：（make-dir）：创建目录"><a href="#mkdir：（make-dir）：创建目录" class="headerlink" title="mkdir：（make dir）：创建目录"></a>mkdir：（make dir）：创建目录</h3></li>
+<li><h3 id="rm（remove）删除文件-目录"><a href="#rm（remove）删除文件-目录" class="headerlink" title="rm（remove）删除文件/目录"></a>rm（remove）删除文件/目录</h3><ul>
+<li>rm -r  目录/文件  ：表示递归删除</li>
+<li>rm -ri  ：可以明确删除的过程</li>
+<li>rm -rf  /  $DIR      /  $FILE</li>
+<li>rm删除要注意</li>
+</ul>
+</li>
+<li><h3 id="mv（move）移动"><a href="#mv（move）移动" class="headerlink" title="mv（move）移动"></a>mv（move）移动</h3><ul>
+<li>把一个文件/目录移动到其他目录中去</li>
+<li>重命名</li>
+</ul>
+</li>
+<li><h3 id="cp（copy）：拷贝一个文件，目录"><a href="#cp（copy）：拷贝一个文件，目录" class="headerlink" title="cp（copy）：拷贝一个文件，目录"></a>cp（copy）：拷贝一个文件，目录</h3><ul>
+<li>cp -r 递归的拷贝目录以上的操作能覆盖到日常工作中80%的情况</li>
+</ul>
+</li>
+<li><h3 id="创建一个新用户（只有root用户才可以创建）"><a href="#创建一个新用户（只有root用户才可以创建）" class="headerlink" title="创建一个新用户（只有root用户才可以创建）"></a>创建一个新用户（只有root用户才可以创建）</h3><ul>
+<li><p>useradd创建用户</p>
+</li>
+<li><p>passwd给用户创建密码</p>
+</li>
+<li><h4 id="su：切换到管理员"><a href="#su：切换到管理员" class="headerlink" title="su：切换到管理员"></a>su：切换到管理员</h4></li>
+<li><h4 id="exit-Ctrl-D退出管理员模式"><a href="#exit-Ctrl-D退出管理员模式" class="headerlink" title="exit/Ctrl+D退出管理员模式"></a>exit/Ctrl+D退出管理员模式</h4></li>
+</ul>
+</li>
+<li><p>权限（读，写，可执行）</p>
+<ul>
+<li>读写查看内容   r</li>
+<li>写：修改内容   w</li>
+<li>可执行 ：运行程序   x</li>
+<li>对应的角色：<ul>
+<li>文件拥有者</li>
+<li>文件拥有者的所属</li>
+<li>其他用户</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="chmod可以用来修改权限"><a href="#chmod可以用来修改权限" class="headerlink" title="chmod可以用来修改权限"></a>chmod可以用来修改权限</h3></li>
+</ul>
+<p>增加或删除某个权限，并且可以针对某类角色来执行。（对于root用户来说没有意义）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/Linux：常用命令：/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -203,320 +733,9 @@
 <p>查询字符串（query_String）中的键值</p>
 <p>urllencode：query_String如果包含了一些特点字符，都需要进行转义.【十六进制数字】</p>
 <p>抓包工具，收费站</p>
-<a id="more"></a>
-
-<h3 id="http请求"><a href="#http请求" class="headerlink" title="http请求"></a>http请求</h3><ol>
-<li>首行<ul>
-<li>方法GET/POST/PUT/DELETE/……</li>
-<li>url</li>
-<li>版本号：HTTP/1.1       HTTP/2.0            HTTP/3.0</li>
-</ul>
-</li>
-<li>协议头（header）<ul>
-<li>若干个键值对</li>
-<li>没一个键值对占一行</li>
-<li>每个键和值之间的使用：分割</li>
-</ul>
-</li>
-<li>空行<ul>
-<li>表示header到这里就结束了</li>
-</ul>
-</li>
-<li>协议正文（body）<ul>
-<li>一般GET请求没有body，POST请求才有body</li>
-</ul>
-</li>
-</ol>
-<h3 id="HTTP响应格式"><a href="#HTTP响应格式" class="headerlink" title="HTTP响应格式"></a>HTTP响应格式</h3><ol>
-<li>首行<ul>
-<li>版本号</li>
-<li>状态码</li>
-<li>状态码描述信息</li>
-</ul>
-</li>
-<li>协议头（header）<ul>
-<li>仍是一组键值对</li>
-<li>每个键值对占一行</li>
-<li>每个键和值之间的使用：分割</li>
-</ul>
-</li>
-<li>空行<ul>
-<li>表示header到这里就结束了</li>
-</ul>
-</li>
-<li>协议正文（body）<ul>
-<li>响应中的正文格式可以有很多中</li>
-<li>比如可以是一个html，也可以是css，js，可以是一个图片数据，json数据等等</li>
-</ul>
-</li>
-</ol>
-<h3 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h3><ol>
-<li><h5 id="常用的方法有哪些？"><a href="#常用的方法有哪些？" class="headerlink" title="常用的方法有哪些？"></a>常用的方法有哪些？</h5><ul>
-<li>答：GET, POST, PUT, DELETE, HEAD, OPTION……  。</li>
-</ul>
-</li>
-<li><h5 id="GET和POST的区别是什么？（重点）"><a href="#GET和POST的区别是什么？（重点）" class="headerlink" title="GET和POST的区别是什么？（重点）"></a>GET和POST的区别是什么？（重点）</h5><ul>
-<li>GET请求往往把自定制数据放在query_string中</li>
-<li>POST请求往往把自定制数据放在body中。</li>
-</ul>
-</li>
-<li><h5 id="常见得到状态码有哪些？（重点）"><a href="#常见得到状态码有哪些？（重点）" class="headerlink" title="常见得到状态码有哪些？（重点）"></a>常见得到状态码有哪些？（重点）</h5><ul>
-<li><p>200 OK 表示访问成功 </p>
-</li>
-<li><p>302 Found 或者 303 See Other 表示重定向。</p>
-</li>
-<li><p>404 Not Found 表示没找到指定资源           </p>
-</li>
-<li><p>403 Forbidden 表示没有权限</p>
-</li>
-<li><p>502 Bad Gateway 表示服务器挂了        </p>
-</li>
-<li><p>504 Gateway Timeout 表示服务器响应超时</p>
-</li>
-<li><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
-<li><strong>2XX都表示访问成功</strong></li>
-<li><strong>3XX都表示重定向</strong></li>
-<li><strong>4XX表示客服端出错</strong></li>
-<li><strong>5XX都表示服务器端出错</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="常见的-header有哪些？"><a href="#常见的-header有哪些？" class="headerlink" title="常见的 header有哪些？"></a>常见的 header有哪些？</h5><ul>
-<li><p>Content-Type：描述了body的数据格式类型。</p>
-</li>
-<li><p>Content-Length：描述了body的数据长度。</p>
-</li>
-<li><p>Host：描述了访问的主机名（域名/ip）。</p>
-</li>
-<li><p>Referer：当前页面是从哪个页面跳转过来的。</p>
-</li>
-<li><p>Cookie：字符串，浏览器本地存储的能力之一，在Cookie中经常会包含一种叫“身份标识”的信息<strong>session id</strong>。</p>
-</li>
-<li><p>session  服务器端维护的一个数据结构，记录了用户的身份信息，session id 就是session对象的唯一身份标识。session id保存在浏览器中，浏览器后续再访问服务器的时候，就会自动带着session id，从而让服务器知道当前请求是哪个用户发来的。</p>
-</li>
-<li><p>服务器端使用一个Hashtable之类的结构来维护若干个用户的身份信息，key就是session id value就是完整的session对象。</p>
-</li>
-<li><p>Cookie是按照Host这个header来划分的。</p>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><ol>
-<li>socket-&gt;传输层密切相关</li>
-<li>传输层负责端到端之间的传输只关注起点和终点</li>
-<li>源ip/源端口</li>
-<li>目的ip/目的端口</li>
-<li>ip地址：是一个32位的整数，ip协议中来描述的。-32751-&gt;  （传输层的概念）</li>
-<li>端口号，区分一台主机上的那个程序，是一位16位的整数。0-65535(网络层的概念)</li>
-</ol>
-<h3 id="UDP协议："><a href="#UDP协议：" class="headerlink" title="UDP协议："></a>UDP协议：</h3><h4 id="2-UDP的校验和使用了一种简单粗暴的的CRC校验去每个字节。"><a href="#2-UDP的校验和使用了一种简单粗暴的的CRC校验去每个字节。" class="headerlink" title="2.UDP的校验和使用了一种简单粗暴的的CRC校验去每个字节。"></a>2.UDP的校验和使用了一种简单粗暴的的CRC校验去每个字节。</h4><ul>
-<li><p>把每个字节的数据循环相加，得到一个最终的数字，就是校验和。</p>
-</li>
-<li><p>接收端按照同样的规则再次进行计算校验和，和发送端的校验和进行对比，如果数据一致，就可以认为数据没有发生错误。</p>
-</li>
-</ul>
-<p>####3.UDP特点和TCP特点</p>
-<table>
-<thead>
-<tr>
-<th align="center">UDP特点</th>
-<th align="center">TCP特点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">无连接（知道对端的IP和端口号就直接进行传输, 不需要建立连接）</td>
-<td align="center">有链接</td>
-</tr>
-<tr>
-<td align="center">不可靠（没有确认机制, 没有重传机制; 如果因为网络故障该段无法发到对方, UDP协议层也不会给应用层返）</td>
-<td align="center">可靠传输</td>
-</tr>
-<tr>
-<td align="center">面向数据报(一次只能读取一个数据，相当于将数据包装了)</td>
-<td align="center">面向字节流（一次可以读取多个数据）</td>
-</tr>
-<tr>
-<td align="center">全双工</td>
-<td align="center">全双工</td>
-</tr>
-</tbody></table>
-<h4 id="4-基于UDP的应用层协议"><a href="#4-基于UDP的应用层协议" class="headerlink" title="4.基于UDP的应用层协议"></a>4.基于UDP的应用层协议</h4><p>NFS: 网络文件系统 </p>
-<p>TFTP: 简单文件传输协议 </p>
-<p>DHCP: 动态主机配置协议 </p>
-<p>BOOTP: 启动协议(用于无盘设备启动) </p>
-<p>DNS: 域名解析协议</p>
-<p>###TCP</p>
-<h5 id="1-tcp的设计核心"><a href="#1-tcp的设计核心" class="headerlink" title="1.tcp的设计核心"></a>1.tcp的设计核心</h5><ul>
-<li>可靠性：发送者能知道自己发送成功没成功</li>
-<li>传输效率：可靠性的前提下尽量提高传输效率</li>
-</ul>
-<p>TCP对每个字节的数据都进行了编号</p>
-<p>一.确认应答</p>
-<ul>
-<li>为了区分当前是应答那个数据，需要引入序号和确认序号概念。</li>
-<li>序号是给每个字节都编了号</li>
-<li>确认序号表示的是当前序号之前的数据已经收到了，同时也意味着向发送端索要当前序列号开始的数据</li>
-</ul>
-<p>二.超时重传</p>
-<ul>
-<li>传输一条数据没有确认应答的时候，等待一段时间，然后进行重传，重传可能重复若干次，重传的次数越多，丢包的概率越低，重传的等待时间间隔，也在依次变长。</li>
-</ul>
-<p>三.连接管理</p>
-<ul>
-<li><p>三次握手建立连接,四次挥手断开连接</p>
-<ul>
-<li><p>建立连接的意义：</p>
-<ol>
-<li>双方各自试探对方看看对方是否适合和我建立连接，双方读写数据的能力。</li>
-<li>双方可以在连接中协商一些必要的数据。TCP序号的基准值。（为后续通信建立前提）</li>
-</ol>
-</li>
-<li><p>三次握手具体过程</p>
-<ul>
-<li><p>客户端前发起一个建立连接的请求（SYN同步报文段）。服务器收到SYN之后会立即返回一个确认报文段（ACK），同时回复的ACK就是SYN</p>
-<p><img src="http://pvhod4ytm.bkt.clouddn.com/1564286369150.png" alt="1564286369150"></p>
-</li>
-<li><p>涉及到的重要状态：</p>
-<ol>
-<li>LISTEN状态，服务器端的状态，表示手机开机，信号良好，随时可以有人可以和你建立连接。</li>
-<li>ESTABLISHED状态，表示别人给你打电话，你接通了，连接已经建立完成，随时可以同意了。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>四次挥手断开连接</p>
-</li>
-</ul>
-<p><img src="/2019/09/06/网络/C:%5CUsers%5C%E5%90%91%E9%98%B3%5CAppData%5CLocal%5CTemp%5C1564287709320.png" alt="1564287709320"></p>
-<ol>
-<li>CLOSE_WAIT：等待程序调用close来完成最终的断开连接的过程。</li>
-<li>如果一个服务器上出现大量的CLOSE_WAIT是什么情况？</li>
-<li><strong>TIME_WAIT</strong>:虽然此时程序可能已经结束了，但是还是要保持链接为TIME_WAIT状态一段时间，因为发送的最后一个ACK可能丢包。<ul>
-<li>TIME_WAIT等待时间是2MSL</li>
-<li>MSL成为网络上两个主机之间数据传输的理论最大时间，在Centos7上默认是60s。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<p>四：滑动窗口</p>
-<ul>
-<li>窗口：不等待ACK的情况下批量发送多少数据</li>
-<li>滑动：每次收到一个ACK之后，就依次发送下一条数据，等待ACK的数据区间    就在往后移动。</li>
-<li>窗口越大，传输效率越高</li>
-<li>可靠性，如果窗口无限大，那么接收端可能处理不过来，网络环境也可能承受不了。</li>
-<li>如果在滑动窗口丢包了怎么办？<ul>
-<li>如果是ACK丢了，没事，不用管，确认序号表示的含义是当前序列号之前的数据都接收到了，后一个ACK就能涵盖前一个ACK的含义。</li>
-<li>如果是数据丢了，接收端就会反复尝试索要该丢掉的数据，重复若干次后，发送端就会认为丢包，并重传相应的数据，而对于已经发送成功的数据，则没必要重新传输一次。（确认序列巧妙的设定—快速重传）</li>
-</ul>
-</li>
-</ul>
-<p>五：流量控制：</p>
-<p>​              限制滑动窗口大小的一种机制，根据接收端的处理能力来进行限制。</p>
-<ul>
-<li>接收缓存区剩余空间越多，接收端的出来能力越强，反之，越弱。</li>
-</ul>
-<p>六：拥塞控制：根据网络的拥堵情况，来限制发送端的发送速率</p>
-<ul>
-<li><p>试探式的方式</p>
-<ul>
-<li>刚开始的时候，使用比较小的滑动窗口，如果这时候没有丢包，说明网络很通畅，增大滑动窗口，若发生丢包。说明网络可能已经堵塞了，减小滑动窗口。</li>
-</ul>
-</li>
-<li><p>发送端真实的滑动窗口大小=min（流量控制中的窗口大小，拥塞窗口）。</p>
-</li>
-</ul>
-<p>七.延迟应答  ：提高传输效率的方式</p>
-<p>尽可能提高窗口大小</p>
-<p>延时应答导致延时时间中，接收端的程序已经处理了一部分的数据，此时ACK中的窗口大小就更大了。</p>
-<p>八.捎带应答 ：延时应答的基础上，在提高传输效率。</p>
-<hr>
-<h2 id="网络层：（相当于快递小哥）"><a href="#网络层：（相当于快递小哥）" class="headerlink" title="网络层：（相当于快递小哥）"></a>网络层：（相当于快递小哥）</h2><p>最核心的协议就是ip协议  。ipv4  ipv6</p>
-<ol>
-<li>地址管理   使用一个32位的整数来表示地址ip地址<ul>
-<li>32位的整数，表示成点分十进制的方式：如123.139.84.33</li>
-<li>网段划分<ul>
-<li>ip地址分为网络号和主机号</li>
-<li>同一个局域网中，网络号都相同，但是主机号不同</li>
-<li>相邻两个局域网，网络号不能相同</li>
-<li>局域网之间是使用路由器连接的</li>
-<li>如何去扥网络号和主机号？<ul>
-<li>通过子网掩码来区分，子网掩码也是一个32位的整数，同样也可以表示成点分十进制，要求高位为1，低位必须为0。</li>
-<li>泪如192.168.128.10/255.255.255.0-&gt;24</li>
-<li>按位与结果-&gt;192.168.128.0就是网络号。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>解决ip地址不够用的方法<ul>
-<li>动态分配</li>
-<li>NAT机制，一个IP供多个主机来使用</li>
-<li>IPV6</li>
-</ul>
-</li>
-<li>私有ip和公有ip<ul>
-<li>私有ip上搭建的服务器通常情况下只能在局域网内部访问</li>
-<li>公网ip上搭建的服务器才能被任何设备访问（云服务器）</li>
-</ul>
-</li>
-<li>路由选择<ul>
-<li>两个主机之间要进行通信，找到一条合适的路径</li>
-<li>A-&gt;B之间存在很多条路线</li>
-<li>核心的过程是按照“一跳一跳”的方式进行路由的，一跳指的是通过路由器访问到下一个设备。</li>
-<li>六度空间<ul>
-<li>TTL默认值叫64，问路的时候最多问64次。</li>
-<li>路由表</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="网络链路层"><a href="#网络链路层" class="headerlink" title="网络链路层"></a>网络链路层</h2><ul>
-<li>负责两个相邻节点之间如何传输数据</li>
-<li>MAC地址：表示互联网上的唯一一个主机</li>
-<li>6个字节来表示mac地址。</li>
-<li>以太网：<ul>
-<li>不光规定了数据链路层的内容也规定了物理层的内容。</li>
-<li>以太网数据帧要加上帧头和帧尾</li>
-</ul>
-</li>
-<li>MTU表示一个数据链路层数据帧的最大长度，以太网的MTU1500字节<ul>
-<li>MTU会导致ip数据报分包</li>
-<li>MTU对于传输层没有影响</li>
-<li>不同的数据链路层协议对于MTU的值是不同的。</li>
-</ul>
-</li>
-<li>ARP协议  RARP协议</li>
-</ul>
-
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -525,84 +744,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/网络/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/06/网络/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/09/06/Linux：常用命令：/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/09/06/JDBC的使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -617,32 +768,85 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络"><span class="toc-number">1.</span> <span class="toc-text">计算机网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用层"><span class="toc-number">2.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#url：网址-链接"><span class="toc-number">2.1.</span> <span class="toc-text">url：网址/链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http请求"><span class="toc-number">2.2.</span> <span class="toc-text">http请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP响应格式"><span class="toc-number">2.3.</span> <span class="toc-text">HTTP响应格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet"><span class="toc-number">2.4.</span> <span class="toc-text">servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用的方法有哪些？"><span class="toc-number">2.4.0.1.</span> <span class="toc-text">常用的方法有哪些？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GET和POST的区别是什么？（重点）"><span class="toc-number">2.4.0.2.</span> <span class="toc-text">GET和POST的区别是什么？（重点）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#常见得到状态码有哪些？（重点）"><span class="toc-number">2.4.0.3.</span> <span class="toc-text">常见得到状态码有哪些？（重点）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">2.4.1.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常见的-header有哪些？"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">常见的 header有哪些？</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传输层"><span class="toc-number">3.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP协议："><span class="toc-number">3.1.</span> <span class="toc-text">UDP协议：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-UDP的校验和使用了一种简单粗暴的的CRC校验去每个字节。"><span class="toc-number">3.1.1.</span> <span class="toc-text">2.UDP的校验和使用了一种简单粗暴的的CRC校验去每个字节。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-基于UDP的应用层协议"><span class="toc-number">3.1.2.</span> <span class="toc-text">4.基于UDP的应用层协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-tcp的设计核心"><span class="toc-number">3.1.2.1.</span> <span class="toc-text">1.tcp的设计核心</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络层：（相当于快递小哥）"><span class="toc-number">4.</span> <span class="toc-text">网络层：（相当于快递小哥）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络链路层"><span class="toc-number">5.</span> <span class="toc-text">网络链路层</span></a></li></ol>
-                    </div>
-                </span>
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JDBC的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="JDBC的使用"><a href="#JDBC的使用" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h2><h1 id="JDBC的使用-1"><a href="#JDBC的使用-1" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h1><p>1.加载驱动，创建链接conncetion</p>
+<p>（1）Class.forName(“com.mysql.jdbc.Driver”)</p>
+<p>（2）Connection conn =</p>
+<p>（3）DriverManager.getconnection(url,username,password)</p>
+<p>drivermanager</p>
+<p>datasource（效率比较高，因为有连接池）</p>
+<p>数据源/连接池  ：连接池使用数据源来构造的</p>
+<p>2.创建statement对象</p>
+<p>（1）Statement</p>
+<p>（2）PreparedStatement  : 语法层面（运行站位符）预编译，预防sql注入。</p>
+<p>（3）CallableStatement</p>
+<p>3.执行sql语句</p>
+<p>（1）ResultSet rs=PreparedStatement.executeQuery();  查询</p>
+<p>（2）int num=PreparedStatement.executeUpdate（）：新增 ，删除，修改</p>
+<p>4.处理结果集resultset</p>
+<p>while(rs.next){</p>
+<p>Integet cloumn1=re.getInteger(“cloumn1”)</p>
+<hr>
+<p>}</p>
+<p>5.释放资源（resultset  ， statement  ，connection）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/JDBC的使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
             </div>
         </div>
+        
         
     </div>
 </aside>
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -665,8 +869,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
