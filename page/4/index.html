@@ -445,46 +445,7 @@
 <li>notify：阻塞—&gt;就绪，必须在同步方法或同步代码块中使用</li>
 <li>创建          就绪        运行        终止</li>
 </ul>
-<p>​    阻塞</p>
-<ul>
-<li>守护线程与用户线程</li>
-<li>默认创建的都是用户线程—-主线程</li>
-<li>守护线程：在后台执行，只要java中存在任意一个用户线程没有终止，守护线程就一直运行</li>
-<li>当JVM中最后一个用户线程终止，守护线程会随着JVM一同停止，GC进程。</li>
-</ul>
-<ol start="3">
-<li>线程同步</li>
-</ol>
-<ul>
-<li><p>多线程三个特性（原子性、可见性、有序性）任意一个不满足，都存在线程安全问题.</p>
-<ul>
-<li><p>synchronize实现线程安全</p>
-<ul>
-<li><p>同步代码块</p>
-<p>​        synchronize（锁的对象）{}</p>
-<p>​         -普通类</p>
-<p>​         -类，class</p>
-</li>
-<li><p>同步方法</p>
-</li>
-</ul>
-<p>​                 -成员同步方法：锁的是当前对象this</p>
-<p>​                 -静态同步方法：锁的是类的反射对象</p>
-<ul>
-<li>synchronize底层实现（对象的Monitor机制）</li>
-<li>任意一个对象都有MOnitor，synchronized对象锁实际上就是获取对象的Moniter。</li>
-<li>当前线要想要获得该锁的Monitor的流程</li>
-<li>先判断锁对象得Monitor计数器是否为0；<ul>
-<li>为0：表示此时Monitor还未被任何线程持有，当线程获取Monitor，并将线程置为自己，将Monitor的值+1；</li>
-<li>不为0：表示Monitor已经被线程持有，判断线程获取Monitor</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+        
       
 
       
@@ -536,116 +497,8 @@
 <li><p>Linux简介</p>
 <p>Linux是一套免费使用和自由传播的<a href="https://baike.baidu.com/item/类Unix" target="_blank" rel="noopener">类Unix</a><a href="https://baike.baidu.com/item/操作系统/192" target="_blank" rel="noopener">操作系统</a>，是一个基于<a href="https://baike.baidu.com/item/POSIX" target="_blank" rel="noopener">POSIX</a>和Unix的多用户、<a href="https://baike.baidu.com/item/多任务/1011764" target="_blank" rel="noopener">多任务</a>、支持<a href="https://baike.baidu.com/item/多线程/1190404" target="_blank" rel="noopener">多线程</a>和多<a href="https://baike.baidu.com/item/CPU" target="_blank" rel="noopener">CPU</a>的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持<a href="https://baike.baidu.com/item/32位/5812218" target="_blank" rel="noopener">32位</a>和<a href="https://baike.baidu.com/item/64位" target="_blank" rel="noopener">64位</a>硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
 </li>
-<li><p><img src="https://www.runoob.com/wp-content/uploads/2014/06/1511849829609658.jpg" alt="img"></p>
-</li>
 </ol>
-<p>Linux本质上是一个操作系统的内核</p>
-<ul>
-<li>内核负责：</li>
-</ul>
-<ol>
-<li>对硬件设备的管理</li>
-<li>对软件资源的管理</li>
-</ol>
-<p>Centos7=Linux内核+配套的应用程序</p>
-<p>以Linux为内核包装出来的操作系统有很多发行版：</p>
-<p>Ubuntu      Centos     Debain       Gentoo</p>
-<p>Android     Kali          Puppy      ……</p>
-<ol start="2">
-<li><h2 id="Linux：常用命令："><a href="#Linux：常用命令：" class="headerlink" title="Linux：常用命令："></a>Linux：常用命令：</h2></li>
-</ol>
-<ul>
-<li><h3 id="ls（list）"><a href="#ls（list）" class="headerlink" title="ls（list）"></a>ls（list）</h3><ul>
-<li>罗列出当前目录中的文件和目录</li>
-<li>更常用的是Is -l/ll打印出更详细的信息（通常是两个ll）</li>
-</ul>
-</li>
-<li><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><ul>
-<li><p>进入某个目录/切换某个目录</p>
-</li>
-<li><p>特殊的目录</p>
-<ul>
-<li><h5 id="表示当前目录"><a href="#表示当前目录" class="headerlink" title=". 表示当前目录"></a>. 表示当前目录</h5></li>
-<li><h5 id="表示当前目录的上级目录"><a href="#表示当前目录的上级目录" class="headerlink" title=".. 表示当前目录的上级目录"></a>.. 表示当前目录的上级目录</h5></li>
-<li><h5 id="表示当前用户的home目录"><a href="#表示当前用户的home目录" class="headerlink" title="~ 表示当前用户的home目录"></a>~ 表示当前用户的home目录</h5></li>
-<li><h5 id="表示根目录，所有目录的最上级目录（相当于windows的我的电脑）"><a href="#表示根目录，所有目录的最上级目录（相当于windows的我的电脑）" class="headerlink" title="/ 表示根目录，所有目录的最上级目录（相当于windows的我的电脑）"></a>/ 表示根目录，所有目录的最上级目录（相当于windows的我的电脑）</h5></li>
-</ul>
-</li>
-<li><p>Linux的目录结构也是一种树形结构</p>
-</li>
-</ul>
-<p>查看当前目录的完整路径（绝对路径）</p>
-<ol>
-<li>绝对路径：以/开头的目录</li>
-<li>相对路径：以.或者..开头的目录</li>
-<li>tree .    ：查看树结构</li>
-</ol>
-</li>
-<li><h3 id="touch：创建一个空文件"><a href="#touch：创建一个空文件" class="headerlink" title="touch：创建一个空文件"></a>touch：创建一个空文件</h3></li>
-<li><h3 id="cat-：-查看文件内容"><a href="#cat-：-查看文件内容" class="headerlink" title="cat   ： 查看文件内容"></a>cat   ： 查看文件内容</h3><ul>
-<li>使用tab键补全命令和路径</li>
-<li>使用Ctrl+l清楚路径</li>
-</ul>
-</li>
-<li><h3 id="less：查看文件内容，提供更丰富的支持"><a href="#less：查看文件内容，提供更丰富的支持" class="headerlink" title="less：查看文件内容，提供更丰富的支持"></a>less：查看文件内容，提供更丰富的支持</h3><ul>
-<li>使用上下箭头来滚动翻译</li>
-<li>less只能看，不能改。</li>
-<li>打开大文件特别快  懒加载</li>
-</ul>
-</li>
-<li><h3 id="vim-：查看并修改文件"><a href="#vim-：查看并修改文件" class="headerlink" title="vim ：查看并修改文件"></a>vim ：查看并修改文件</h3><ul>
-<li>使用起来非常不方便的程序但，但很nb</li>
-<li>区分模式<ul>
-<li>Normal：按下的键都是快捷键，不是真的输入文本</li>
-<li>Insert：才是真的输入文本（i进入，esc退出）</li>
-<li>Command： ：wq保存退出</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="mkdir：（make-dir）：创建目录"><a href="#mkdir：（make-dir）：创建目录" class="headerlink" title="mkdir：（make dir）：创建目录"></a>mkdir：（make dir）：创建目录</h3></li>
-<li><h3 id="rm（remove）删除文件-目录"><a href="#rm（remove）删除文件-目录" class="headerlink" title="rm（remove）删除文件/目录"></a>rm（remove）删除文件/目录</h3><ul>
-<li>rm -r  目录/文件  ：表示递归删除</li>
-<li>rm -ri  ：可以明确删除的过程</li>
-<li>rm -rf  /  $DIR      /  $FILE</li>
-<li>rm删除要注意</li>
-</ul>
-</li>
-<li><h3 id="mv（move）移动"><a href="#mv（move）移动" class="headerlink" title="mv（move）移动"></a>mv（move）移动</h3><ul>
-<li>把一个文件/目录移动到其他目录中去</li>
-<li>重命名</li>
-</ul>
-</li>
-<li><h3 id="cp（copy）：拷贝一个文件，目录"><a href="#cp（copy）：拷贝一个文件，目录" class="headerlink" title="cp（copy）：拷贝一个文件，目录"></a>cp（copy）：拷贝一个文件，目录</h3><ul>
-<li>cp -r 递归的拷贝目录以上的操作能覆盖到日常工作中80%的情况</li>
-</ul>
-</li>
-<li><h3 id="创建一个新用户（只有root用户才可以创建）"><a href="#创建一个新用户（只有root用户才可以创建）" class="headerlink" title="创建一个新用户（只有root用户才可以创建）"></a>创建一个新用户（只有root用户才可以创建）</h3><ul>
-<li><p>useradd创建用户</p>
-</li>
-<li><p>passwd给用户创建密码</p>
-</li>
-<li><h4 id="su：切换到管理员"><a href="#su：切换到管理员" class="headerlink" title="su：切换到管理员"></a>su：切换到管理员</h4></li>
-<li><h4 id="exit-Ctrl-D退出管理员模式"><a href="#exit-Ctrl-D退出管理员模式" class="headerlink" title="exit/Ctrl+D退出管理员模式"></a>exit/Ctrl+D退出管理员模式</h4></li>
-</ul>
-</li>
-<li><p>权限（读，写，可执行）</p>
-<ul>
-<li>读写查看内容   r</li>
-<li>写：修改内容   w</li>
-<li>可执行 ：运行程序   x</li>
-<li>对应的角色：<ul>
-<li>文件拥有者</li>
-<li>文件拥有者的所属</li>
-<li>其他用户</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="chmod可以用来修改权限"><a href="#chmod可以用来修改权限" class="headerlink" title="chmod可以用来修改权限"></a>chmod可以用来修改权限</h3></li>
-</ul>
-<p>增加或删除某个权限，并且可以针对某类角色来执行。（对于root用户来说没有意义）</p>
-
+        
       
 
       
@@ -658,6 +511,58 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/09/06/Linux：常用命令：/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JDBC的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="JDBC的使用"><a href="#JDBC的使用" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h2><h1 id="JDBC的使用-1"><a href="#JDBC的使用-1" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h1><p>1.加载驱动，创建链接conncetion</p>
+<p>（1）Class.forName(“com.mysql.jdbc.Driver”)</p>
+<p>（2）Connection conn =</p>
+<p>（3）DriverManager.getconnection(url,username,password)</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/JDBC的使用/">展开全文 >></a>
         </p>
       
 
@@ -746,74 +651,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/09/06/网络/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JDBC的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="JDBC的使用"><a href="#JDBC的使用" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h2><h1 id="JDBC的使用-1"><a href="#JDBC的使用-1" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h1><p>1.加载驱动，创建链接conncetion</p>
-<p>（1）Class.forName(“com.mysql.jdbc.Driver”)</p>
-<p>（2）Connection conn =</p>
-<p>（3）DriverManager.getconnection(url,username,password)</p>
-<p>drivermanager</p>
-<p>datasource（效率比较高，因为有连接池）</p>
-<p>数据源/连接池  ：连接池使用数据源来构造的</p>
-<p>2.创建statement对象</p>
-<p>（1）Statement</p>
-<p>（2）PreparedStatement  : 语法层面（运行站位符）预编译，预防sql注入。</p>
-<p>（3）CallableStatement</p>
-<p>3.执行sql语句</p>
-<p>（1）ResultSet rs=PreparedStatement.executeQuery();  查询</p>
-<p>（2）int num=PreparedStatement.executeUpdate（）：新增 ，删除，修改</p>
-<p>4.处理结果集resultset</p>
-<p>while(rs.next){</p>
-<p>Integet cloumn1=re.getInteger(“cloumn1”)</p>
-<hr>
-<p>}</p>
-<p>5.释放资源（resultset  ， statement  ，connection）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/06/JDBC的使用/">展开全文 >></a>
         </p>
       
 

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）   JMM三大特性  只有以下三个特性同时满足，才是线程安全的代码 原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Loc">
+  <meta name="description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的博客">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/# JVM/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）   JMM三大特性  只有以下三个特性同时满足，才是线程安全的代码 原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Loc">
+<meta property="og:description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-13T03:55:53.517Z">
+<meta property="og:updated_time" content="2019-09-06T15:07:56.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）   JMM三大特性  只有以下三个特性同时满足，才是线程安全的代码 原子性：基本数据类型的访问读写都属于原子性操作若需要更大范围的原子性，需要使用synchronized的Loc">
+<meta name="twitter:description" content="JVMJVM：java内存模型（关于并发程序的内存模型-逻辑模型）  JMM的工作流程  工作内存：每个线程创建时分配的空间，线程私有。 主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -159,7 +159,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><p>JVM：java内存模型（关于并发程序的内存模型-逻辑模型）</p>
+        <hr>
+<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>JVM：java内存模型（关于并发程序的内存模型-逻辑模型）</p>
 <ol>
 <li><p>JMM的工作流程</p>
 <ul>
@@ -167,6 +168,10 @@
 <li>主内存：所有线程共享的内存区域，存放所有的共享变量（类的实例变量，静态变量，常量）</li>
 </ul>
 </li>
+</ol>
+<a id="more"></a>
+
+<ol>
 <li><p>JMM三大特性</p>
 <ul>
 <li>只有以下三个特性同时满足，才是线程安全的代码<ul>
@@ -519,7 +524,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM"><span class="toc-number">1.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-1"><span class="toc-number">1.1.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存区域划分"><span class="toc-number">1.1.1.</span> <span class="toc-text">内存区域划分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类集"><span class="toc-number">1.2.</span> <span class="toc-text">类集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList、LinkList、vector的关系与区别（源码）？"><span class="toc-number">1.2.1.</span> <span class="toc-text">ArrayList、LinkList、vector的关系与区别（源码）？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请描述fail-fast（快速失败）策略-ConcurrentModificationExcrption"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">请描述fail-fast（快速失败）策略?  ConcurrentModificationExcrption.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set与Map有什么关系？"><span class="toc-number">1.2.2.</span> <span class="toc-text">set与Map有什么关系？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1hashcode与equals的区别"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">3.1hashcode与equals的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2如何实现第三方类的比较（内部排序，外部排序）"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">3.2如何实现第三方类的比较（内部排序，外部排序）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap、Hashtable、TreeMap的关系与区别？"><span class="toc-number">1.2.3.</span> <span class="toc-text">HashMap、Hashtable、TreeMap的关系与区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#树化逻辑："><span class="toc-number">1.2.3.0.1.</span> <span class="toc-text">树化逻辑：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JDK1-8为什么要将链表树化。"><span class="toc-number">1.2.3.0.2.</span> <span class="toc-text">JDK1.8为什么要将链表树化。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#扩容：当前数组元素个数-gt-容量-负载因子"><span class="toc-number">1.2.3.0.3.</span> <span class="toc-text">扩容：当前数组元素个数&gt;容量*负载因子</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为何容量必须为2-n"><span class="toc-number">1.2.3.0.4.</span> <span class="toc-text">为何容量必须为2*n</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">5.为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-number">1.</span> <span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-1"><span class="toc-number">2.</span> <span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存区域划分"><span class="toc-number">2.1.</span> <span class="toc-text">内存区域划分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类集"><span class="toc-number">3.</span> <span class="toc-text">类集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList、LinkList、vector的关系与区别（源码）？"><span class="toc-number">3.1.</span> <span class="toc-text">ArrayList、LinkList、vector的关系与区别（源码）？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请描述fail-fast（快速失败）策略-ConcurrentModificationExcrption"><span class="toc-number">3.1.1.</span> <span class="toc-text">请描述fail-fast（快速失败）策略?  ConcurrentModificationExcrption.</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set与Map有什么关系？"><span class="toc-number">3.2.</span> <span class="toc-text">set与Map有什么关系？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1hashcode与equals的区别"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.1hashcode与equals的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2如何实现第三方类的比较（内部排序，外部排序）"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.2如何实现第三方类的比较（内部排序，外部排序）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap、Hashtable、TreeMap的关系与区别？"><span class="toc-number">3.3.</span> <span class="toc-text">HashMap、Hashtable、TreeMap的关系与区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#树化逻辑："><span class="toc-number">3.3.0.1.</span> <span class="toc-text">树化逻辑：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JDK1-8为什么要将链表树化。"><span class="toc-number">3.3.0.2.</span> <span class="toc-text">JDK1.8为什么要将链表树化。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#扩容：当前数组元素个数-gt-容量-负载因子"><span class="toc-number">3.3.0.3.</span> <span class="toc-text">扩容：当前数组元素个数&gt;容量*负载因子</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#为何容量必须为2-n"><span class="toc-number">3.3.0.4.</span> <span class="toc-text">为何容量必须为2*n</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？"><span class="toc-number">3.3.1.</span> <span class="toc-text">5.为何在线程安全的场合要使用ConcurrentHashMap、ConcurrentHashMap如何高效实现线程安全？</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
