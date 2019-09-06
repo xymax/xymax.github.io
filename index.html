@@ -79,10 +79,6 @@
 				
 					<a class="github" target="_blank" href="https://github.com/" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
 					<a class="qq" target="_blank" href="/1437310304" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="https://www.bilibili.com/" title="bilibili"><i class="icon-bilibili"></i></a>
@@ -124,10 +120,6 @@
 					
 						<a class="github" target="_blank" href="https://github.com/" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 						<a class="qq" target="_blank" href="/1437310304" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="https://www.bilibili.com/" title="bilibili"><i class="icon-bilibili"></i></a>
@@ -160,32 +152,33 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JDBC的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h1 id="网络-1"><a href="#网络-1" class="headerlink" title="网络"></a>网络</h1><p>Linux读音</p>
-<ol>
-<li>李纽克斯</li>
-<li>里纳克斯（官方读音）</li>
-<li>里ne科思</li>
-</ol>
-<p>Linux本质上是一个操作系统的内核</p>
-<ul>
-<li>内核负责：</li>
-</ul>
-<ol>
-<li>对硬件设备的管理</li>
-<li>对软件资源的管理</li>
-</ol>
-<p>Centos7=Linux内核+配套的应用程序</p>
-<p>以Linux为内核包装出来的操作系统有很多发行版：</p>
-<p>Ubuntu      Centos     Debain       Gentoo</p>
-<p>Android     Kali          Puppy      ……</p>
-<p>实际工作中主要用到的发行版：Redhat</p>
-        
+<h2 id="JDBC的使用"><a href="#JDBC的使用" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h2><h1 id="JDBC的使用-1"><a href="#JDBC的使用-1" class="headerlink" title="JDBC的使用"></a>JDBC的使用</h1><p>1.加载驱动，创建链接conncetion</p>
+<p>（1）Class.forName(“com.mysql.jdbc.Driver”)</p>
+<p>（2）Connection conn =</p>
+<p>（3）DriverManager.getconnection(url,username,password)</p>
+<p>drivermanager</p>
+<p>datasource（效率比较高，因为有连接池）</p>
+<p>数据源/连接池  ：连接池使用数据源来构造的</p>
+<p>2.创建statement对象</p>
+<p>（1）Statement</p>
+<p>（2）PreparedStatement  : 语法层面（运行站位符）预编译，预防sql注入。</p>
+<p>（3）CallableStatement</p>
+<p>3.执行sql语句</p>
+<p>（1）ResultSet rs=PreparedStatement.executeQuery();  查询</p>
+<p>（2）int num=PreparedStatement.executeUpdate（）：新增 ，删除，修改</p>
+<p>4.处理结果集resultset</p>
+<p>while(rs.next){</p>
+<p>Integet cloumn1=re.getInteger(“cloumn1”)</p>
+<hr>
+<p>}</p>
+<p>5.释放资源（resultset  ， statement  ，connection）</p>
+
       
 
       
@@ -197,7 +190,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/30/网络/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/06/JDBC的使用/">展开全文 >></a>
         </p>
       
 
@@ -227,39 +220,125 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux：常用命令：" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/28/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-28T15:52:12.820Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-28</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <hr>
+<h2 id="Linux简介及常用命令"><a href="#Linux简介及常用命令" class="headerlink" title="Linux简介及常用命令"></a>Linux简介及常用命令</h2><ol>
+<li><p>Linux简介</p>
+<p>Linux是一套免费使用和自由传播的<a href="https://baike.baidu.com/item/类Unix" target="_blank" rel="noopener">类Unix</a><a href="https://baike.baidu.com/item/操作系统/192" target="_blank" rel="noopener">操作系统</a>，是一个基于<a href="https://baike.baidu.com/item/POSIX" target="_blank" rel="noopener">POSIX</a>和Unix的多用户、<a href="https://baike.baidu.com/item/多任务/1011764" target="_blank" rel="noopener">多任务</a>、支持<a href="https://baike.baidu.com/item/多线程/1190404" target="_blank" rel="noopener">多线程</a>和多<a href="https://baike.baidu.com/item/CPU" target="_blank" rel="noopener">CPU</a>的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持<a href="https://baike.baidu.com/item/32位/5812218" target="_blank" rel="noopener">32位</a>和<a href="https://baike.baidu.com/item/64位" target="_blank" rel="noopener">64位</a>硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
+</li>
+<li><p><img src="https://www.runoob.com/wp-content/uploads/2014/06/1511849829609658.jpg" alt="img"></p>
+</li>
+</ol>
+<p>Linux本质上是一个操作系统的内核</p>
+<ul>
+<li>内核负责：</li>
+</ul>
+<ol>
+<li>对硬件设备的管理</li>
+<li>对软件资源的管理</li>
+</ol>
+<p>Centos7=Linux内核+配套的应用程序</p>
+<p>以Linux为内核包装出来的操作系统有很多发行版：</p>
+<p>Ubuntu      Centos     Debain       Gentoo</p>
+<p>Android     Kali          Puppy      ……</p>
+<ol start="2">
+<li><h2 id="Linux：常用命令："><a href="#Linux：常用命令：" class="headerlink" title="Linux：常用命令："></a>Linux：常用命令：</h2></li>
+</ol>
+<ul>
+<li><h3 id="ls（list）"><a href="#ls（list）" class="headerlink" title="ls（list）"></a>ls（list）</h3><ul>
+<li>罗列出当前目录中的文件和目录</li>
+<li>更常用的是Is -l/ll打印出更详细的信息（通常是两个ll）</li>
+</ul>
+</li>
+<li><h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><ul>
+<li><p>进入某个目录/切换某个目录</p>
+</li>
+<li><p>特殊的目录</p>
+<ul>
+<li><h5 id="表示当前目录"><a href="#表示当前目录" class="headerlink" title=". 表示当前目录"></a>. 表示当前目录</h5></li>
+<li><h5 id="表示当前目录的上级目录"><a href="#表示当前目录的上级目录" class="headerlink" title=".. 表示当前目录的上级目录"></a>.. 表示当前目录的上级目录</h5></li>
+<li><h5 id="表示当前用户的home目录"><a href="#表示当前用户的home目录" class="headerlink" title="~ 表示当前用户的home目录"></a>~ 表示当前用户的home目录</h5></li>
+<li><h5 id="表示根目录，所有目录的最上级目录（相当于windows的我的电脑）"><a href="#表示根目录，所有目录的最上级目录（相当于windows的我的电脑）" class="headerlink" title="/ 表示根目录，所有目录的最上级目录（相当于windows的我的电脑）"></a>/ 表示根目录，所有目录的最上级目录（相当于windows的我的电脑）</h5></li>
+</ul>
+</li>
+<li><p>Linux的目录结构也是一种树形结构</p>
+</li>
+</ul>
+<p>查看当前目录的完整路径（绝对路径）</p>
+<ol>
+<li>绝对路径：以/开头的目录</li>
+<li>相对路径：以.或者..开头的目录</li>
+<li>tree .    ：查看树结构</li>
+</ol>
+</li>
+<li><h3 id="touch：创建一个空文件"><a href="#touch：创建一个空文件" class="headerlink" title="touch：创建一个空文件"></a>touch：创建一个空文件</h3></li>
+<li><h3 id="cat-：-查看文件内容"><a href="#cat-：-查看文件内容" class="headerlink" title="cat   ： 查看文件内容"></a>cat   ： 查看文件内容</h3><ul>
+<li>使用tab键补全命令和路径</li>
+<li>使用Ctrl+l清楚路径</li>
+</ul>
+</li>
+<li><h3 id="less：查看文件内容，提供更丰富的支持"><a href="#less：查看文件内容，提供更丰富的支持" class="headerlink" title="less：查看文件内容，提供更丰富的支持"></a>less：查看文件内容，提供更丰富的支持</h3><ul>
+<li>使用上下箭头来滚动翻译</li>
+<li>less只能看，不能改。</li>
+<li>打开大文件特别快  懒加载</li>
+</ul>
+</li>
+<li><h3 id="vim-：查看并修改文件"><a href="#vim-：查看并修改文件" class="headerlink" title="vim ：查看并修改文件"></a>vim ：查看并修改文件</h3><ul>
+<li>使用起来非常不方便的程序但，但很nb</li>
+<li>区分模式<ul>
+<li>Normal：按下的键都是快捷键，不是真的输入文本</li>
+<li>Insert：才是真的输入文本（i进入，esc退出）</li>
+<li>Command： ：wq保存退出</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="mkdir：（make-dir）：创建目录"><a href="#mkdir：（make-dir）：创建目录" class="headerlink" title="mkdir：（make dir）：创建目录"></a>mkdir：（make dir）：创建目录</h3></li>
+<li><h3 id="rm（remove）删除文件-目录"><a href="#rm（remove）删除文件-目录" class="headerlink" title="rm（remove）删除文件/目录"></a>rm（remove）删除文件/目录</h3><ul>
+<li>rm -r  目录/文件  ：表示递归删除</li>
+<li>rm -ri  ：可以明确删除的过程</li>
+<li>rm -rf  /  $DIR      /  $FILE</li>
+<li>rm删除要注意</li>
+</ul>
+</li>
+<li><h3 id="mv（move）移动"><a href="#mv（move）移动" class="headerlink" title="mv（move）移动"></a>mv（move）移动</h3><ul>
+<li>把一个文件/目录移动到其他目录中去</li>
+<li>重命名</li>
+</ul>
+</li>
+<li><h3 id="cp（copy）：拷贝一个文件，目录"><a href="#cp（copy）：拷贝一个文件，目录" class="headerlink" title="cp（copy）：拷贝一个文件，目录"></a>cp（copy）：拷贝一个文件，目录</h3><ul>
+<li>cp -r 递归的拷贝目录以上的操作能覆盖到日常工作中80%的情况</li>
+</ul>
+</li>
+<li><h3 id="创建一个新用户（只有root用户才可以创建）"><a href="#创建一个新用户（只有root用户才可以创建）" class="headerlink" title="创建一个新用户（只有root用户才可以创建）"></a>创建一个新用户（只有root用户才可以创建）</h3><ul>
+<li><p>useradd创建用户</p>
+</li>
+<li><p>passwd给用户创建密码</p>
+</li>
+<li><h4 id="su：切换到管理员"><a href="#su：切换到管理员" class="headerlink" title="su：切换到管理员"></a>su：切换到管理员</h4></li>
+<li><h4 id="exit-Ctrl-D退出管理员模式"><a href="#exit-Ctrl-D退出管理员模式" class="headerlink" title="exit/Ctrl+D退出管理员模式"></a>exit/Ctrl+D退出管理员模式</h4></li>
+</ul>
+</li>
+<li><p>权限（读，写，可执行）</p>
+<ul>
+<li>读写查看内容   r</li>
+<li>写：修改内容   w</li>
+<li>可执行 ：运行程序   x</li>
+<li>对应的角色：<ul>
+<li>文件拥有者</li>
+<li>文件拥有者的所属</li>
+<li>其他用户</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="chmod可以用来修改权限"><a href="#chmod可以用来修改权限" class="headerlink" title="chmod可以用来修改权限"></a>chmod可以用来修改权限</h3></li>
+</ul>
+<p>增加或删除某个权限，并且可以针对某类角色来执行。（对于root用户来说没有意义）</p>
 
       
 
@@ -272,7 +351,95 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/28/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/06/Linux：常用命令：/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>应用层和程序员最贴近的部分，也包含很多很多的协议</p>
+<p>有一类协议叫做“自定义协议”：客服端给服务器端发送的信息是什么格式服务器返回给客户</p>
+<p>端的信息有事什么格式。</p>
+<p>客户端：主动发起请求的一方称为客户端</p>
+<p>服务器：被动接受请求的一端称为服务器</p>
+<ol>
+<li>请求（request）和响应（response）中包含的信心有哪些</li>
+<li>请求数据和响应数据如何组织（如何按照什么格式来序列化）</li>
+</ol>
+<ul>
+<li>序列化：把对象变成字符串</li>
+<li>反序列化：把字符串变成对象<ul>
+<li>序列化的常见方式<ol>
+<li>xml</li>
+<li>json<ul>
+<li>优点：方便调试</li>
+<li>缺点：传输效率低</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>###【重要】HTTP协议</p>
+<p>英语：<strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol，缩写：<strong>HTTP</strong>）是一种用于分布式、协作式和<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E5%AA%92%E9%AB%94" target="_blank" rel="noopener">超媒体</a>信息系统的<a href="https://zh.wikipedia.org/wiki/%E5%BA%94%E7%94%A8%E5%B1%82" target="_blank" rel="noopener">应用层</a><a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">协议</a><a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE#cite_note-ietf2616-1" target="_blank" rel="noopener">[1]</a>。HTTP是<a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2" target="_blank" rel="noopener">万维网</a>的数据通信的基础。 </p>
+<p>打开一个网页都是靠HTTP协议</p>
+<p>HTTPS其实是基于HTTP来实现的，多了一个加密层</p>
+<h3 id="url：网址-链接"><a href="#url：网址-链接" class="headerlink" title="url：网址/链接"></a>url：网址/链接</h3><p>http：//<a href="http://www.sogou.com" target="_blank" rel="noopener">www.sogou.com</a></p>
+<p>ip地址不太方便记忆和传播，用一些更好记忆的字符串来表示，域名.浏览器在访问域名的时候会自动把域名转成ip地址。</p>
+<p>路径表示主机上的具体的资源</p>
+<p> &lt;<a href="https://www.baidu.com/baidu?isource=infinity" target="_blank" rel="noopener">https://www.baidu.com/baidu?isource=infinity</a></p>
+<p>&amp;iname=baidu</p>
+<p>&amp;itype=web</p>
+<p>&amp;tn=02003390_42_hao_pg</p>
+<p>&amp;ie=utf-8</p>
+<p>&amp;wd=%E8%9B%8B%E7%B3%95&gt; </p>
+<p>查询字符串（query_String）中的键值</p>
+<p>urllencode：query_String如果包含了一些特点字符，都需要进行转义.【十六进制数字】</p>
+<p>抓包工具，收费站</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/网络/">展开全文 >></a>
         </p>
       
 
