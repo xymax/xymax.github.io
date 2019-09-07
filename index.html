@@ -152,6 +152,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1Java反射机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/07/1Java反射机制/">Java反射机制</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/07/1Java反射机制/" class="archive-article-date">
+  	<time datetime="2019-09-07T02:05:37.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="JAVA-反射的简单介绍与运用"><a href="#JAVA-反射的简单介绍与运用" class="headerlink" title="JAVA 反射的简单介绍与运用"></a>JAVA 反射的简单介绍与运用</h4><p>java的反射机制：简单来说就是通过类名来获得类的所有信息。</p>
+<p>优点：可以实现动态创建和编译，体现出灵活性。</p>
+<p>缺点：运行效率没有直接new对象快，但现在有很大的提升，可以忽略不计</p>
+<h5 id="首先获得类的Class文件（-calss文件）"><a href="#首先获得类的Class文件（-calss文件）" class="headerlink" title="首先获得类的Class文件（.calss文件）"></a>首先获得类的Class文件（.calss文件）</h5><p>1、通过类的全名（含包名）,但不推荐使用，编译时，编译器并不知道该类是否存在，需要抛出异常：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class clazz=Class.forName(<span class="string">"className"</span>);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/09/07/1Java反射机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/07/1Java反射机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-10.4工厂方法模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -556,24 +625,22 @@
 
 
   
-    <article id="post-5.排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-9.多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="java几大排序"><a href="#java几大排序" class="headerlink" title="java几大排序"></a>java几大排序</h2><h3 id="1插入排序"><a href="#1插入排序" class="headerlink" title="1插入排序"></a>1插入排序</h3><h4 id="1-1直接插入排序"><a href="#1-1直接插入排序" class="headerlink" title="1.1直接插入排序"></a>1.1直接插入排序</h4><p><strong>直接插入排序基本思想是</strong>：每一步将一个待排序的记录，插入到前面已经排好序的有序序列中去，直到插完所有元素为止。</p>
-<p><strong>直接插入排序的特性总结：</strong></p>
-<ol>
-<li><p>元素集合越接近有序，直接插入排序算法的时间效率越高</p>
-</li>
-<li><p>时间复杂度：O(N^2)</p>
-</li>
-<li><p>空间复杂度：O(1)，它是一种稳定的排序算法</p>
-</li>
-<li><p>稳定性：稳定</p></li></ol>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p><strong>多态性：</strong>多态是同一个行为具有多个不同表现形式或形态的能力</p>
+<p><strong>多态存在的三个必要条件</strong></p>
+<p>继承</p>
+<p>重写</p>
+<p>父类引用指向子类对象</p>
+<p>多态体现的格式：</p>
+<p>父类类型 变量名 = new 子类对象；</p>
+<p>变量名.方法名();</p>
         
-          <a class="article-more-a" href="/2019/09/06/5.排序/#more">more >></a>
+          <a class="article-more-a" href="/2019/09/06/9.多态/#more">more >></a>
         
       
 
@@ -586,7 +653,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/06/5.排序/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/09/06/9.多态/">展开全文 >></a>
         </p>
       
 
@@ -647,62 +714,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/09/06/8.继承/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p><strong>封装性：</strong>将类的某些信息隐藏在类内部，不允许外部程序直接访问，而是通过该类提供的方法来实现对隐藏信息的操作和访问。</p>
-<p><strong>好处：</strong></p>
-<ul>
-<li>只能通过规定的方法访问数据。</li>
-<li>隐藏类的实例细节，方便修改和实现。</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/09/06/7封装/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/06/7封装/">展开全文 >></a>
         </p>
       
 
