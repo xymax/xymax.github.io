@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的博客</title>
+  <title>模板设计模式 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="模板设计模式开闭原则(OCP): 一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。 模板方法模式包含以下主要角色。 (1) 抽象类：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以下几种类型。 l  抽象方法：在抽象类中申明，由具体子类实">
+  <meta name="description" content="开闭原则(OCP): 一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。 模板方法模式包含以下主要角色。 (1) 抽象类：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以下几种类型。 l  抽象方法：在抽象类中申明，由具体子类实现。 l  具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客">
+<meta property="og:title" content="模板设计模式">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/10.2模板设计模式/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="模板设计模式开闭原则(OCP): 一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。 模板方法模式包含以下主要角色。 (1) 抽象类：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以下几种类型。 l  抽象方法：在抽象类中申明，由具体子类实">
+<meta property="og:description" content="开闭原则(OCP): 一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。 模板方法模式包含以下主要角色。 (1) 抽象类：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以下几种类型。 l  抽象方法：在抽象类中申明，由具体子类实现。 l  具">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-06T15:16:44.769Z">
+<meta property="og:updated_time" content="2019-09-07T02:24:42.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="模板设计模式开闭原则(OCP): 一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。 模板方法模式包含以下主要角色。 (1) 抽象类：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以下几种类型。 l  抽象方法：在抽象类中申明，由具体子类实">
+<meta name="twitter:title" content="模板设计模式">
+<meta name="twitter:description" content="开闭原则(OCP): 一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。 模板方法模式包含以下主要角色。 (1) 抽象类：负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。 ① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。 ② 基本方法：是整个算法中的一个步骤，包含以下几种类型。 l  抽象方法：在抽象类中申明，由具体子类实现。 l  具">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -157,10 +157,24 @@
             <article id="post-10.2模板设计模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模板设计模式
+    </h1>
+  
+
+        
+        <a href="/2019/09/06/10.2模板设计模式/" class="archive-article-date">
+  	<time datetime="2019-09-06T12:17:11.669Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="模板设计模式"><a href="#模板设计模式" class="headerlink" title="模板设计模式"></a>模板设计模式</h2><p><strong>开闭原则(OCP):</strong> <strong>一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。</strong></p>
+        <p><strong>开闭原则(OCP):</strong> <strong>一个软件实体如类、模块和函数应该对扩展开放、对修改关闭。</strong></p>
 <p><strong>模板方法模式包含以下主要角色。</strong></p>
 <p><strong>(1)</strong> <strong>抽象类：</strong>负责给出一个算法的轮廓和骨架。它由一个模板方法和若干个基本方法构成。这些方法的定义如下。</p>
 <p><strong>① 模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。</strong></p>
@@ -275,14 +289,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          java几大排序
         
       </div>
     </a>
   
   
-    <a href="/2019/09/06/7.2内部类：/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2019/09/06/7封装/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">封装</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -309,7 +323,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模板设计模式"><span class="toc-number">1.</span> <span class="toc-text">模板设计模式</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
